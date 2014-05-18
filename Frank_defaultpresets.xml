@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
 author="Frankthetankk"
-version="1.01_2014-05-17"
+version="1.02_2014-05-17"
  
 description="My Tags Changes for Internal Presets Defaults"
 shortdescription="My Internal Preset Changes">
@@ -256,7 +256,7 @@ Note that for a match, at least one positive and no negative is required.
         <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
     </chunk>
     <chunk id="service_times">
-        <combo key="service_times" text="Service Times" delimiter="|" values="18:00|sunset,sunrise|Su 09:30,11:00|Sa,Su,PH 09:00|Sa 18:00; Su 10:45|Fr 08:00-18:00; Apr 10-15 off; Jun 07:00-20:00; Aug off; Dec 24 08:00-24:00|Sa 10:00+|week 1-53/2 Fr 09:00-12:00; week 2-52/2 We 09:00-12:00" />
+        <combo key="service_times" text="Service Times" delimiter="|" values="18:00|sunset,sunrise|Su 09:30,11:00|Sa,Su,PH 09:00|Sa 18:00; Su 10:45|Sa 10:00+" />
     </chunk>
     <chunk id="oh">
         <combo key="opening_hours" text="Opening Hours" delimiter="|" values="24/7|08:30-12:30,15:30-20:00|Sa-Su 00:00-24:00|Mo-Fr 08:30-20:00; Sa,Su 08:00-15:00; PH off|Mo-Fr 08:30-20:00, Tu-Su 08:00-15:00; Sa 08:00-12:00|Mo-Su 08:00-18:00|sunrise-sunset|Su 10:00+" />
@@ -284,8 +284,8 @@ Note that for a match, at least one positive and no negative is required.
     <chunk id="internet_smoking_wheelchair">
         <combo key="internet_access" text="Internet access" values="yes,wlan,wired,terminal,no" />
         <combo key="internet_access:fee" text="Internet access fee" values="yes,no" />
-        <combo key="smoking" text="Smoking" values="yes,dedicated,separated,isolated,no" />
-        <combo key="wheelchair" text="Wheelchairs" values="yes,no" />
+        <combo key="smoking" text="Smoking" default="no" values="yes,dedicated,separated,isolated,no" />
+        <combo key="wheelchair" text="Wheelchairs" default="yes" values="yes,no" />
     </chunk>
     <chunk id="optional_height">
         <optional>
@@ -308,11 +308,17 @@ Note that for a match, at least one positive and no negative is required.
         <combo key="leisure" text="Type" values="pitch,sports_centre,stadium" default="pitch" />
     </chunk>
     <chunk id="payment_base">
-        <check key="payment:coins" text="Coins" />
-        <check key="payment:notes" text="Notes" />
-        <check key="payment:electronic_purses" text="Electronic purses and Charge cards" />
-        <check key="payment:debit_cards" text="Debit cards" />
-        <check key="payment:credit_cards" text="Credit cards" />
+        <check key="payment:coins" text="Coins (change)" default="on"/>
+        <check key="payment:notes" text="Paper Money" default="on"/>
+        <check key="payment:cherque" text="Checks (cherque)" />
+        <check key="payment:debit_cards" text="Debit cards" default="on"/>
+        <check key="payment:credit_cards" text="Credit cards" default="on"/>
+        <optional>
+	        <check key="payment:mastercard" text="Mastercard" />
+	        <check key="payment:visa" text="Visa" />
+			<check key="payment:american_express" text="American Express" />
+	        <check key="payment:discover_card" text="Discover Card" />
+		</optional>
     </chunk>
     <chunk id="payment_account">
         <reference ref="payment_base" />
@@ -6773,11 +6779,19 @@ Note that for a match, at least one positive and no negative is required.
             <space />
             <text key="addr:housenumber" text="House number" match="key" auto_increment="-2,-1,+1,+2" />
             <optional>
-                <text key="addr:housename" text="House name" match="key" alternative_autocomplete_keys="name" />
                 <text key="addr:street" text="Street name" use_last_as_default="force" match="key" alternative_autocomplete_keys="name" />
                 <text key="addr:city" text="City name" use_last_as_default="force" match="key" />
+				<text key="addr:state" text="State" default="CA" match="key" alternative_autocomplete_keys="name" />
                 <text key="addr:postcode" text="Post code" use_last_as_default="force" match="key" />
-                <combo key="addr:country" text="Country code" values_from="java.util.Locale#getISOCountries" use_last_as_default="force" match="key" />
+                <combo key="addr:country" text="Country code" values_from="java.util.Locale#getISOCountries" default="US" match="key" />
+				<text key="addr:unit" text="Unit Address" match="key" alternative_autocomplete_keys="name" />
+				<space />
+				<text key="addr:door" text="Door Name" match="key" alternative_autocomplete_keys="name" />
+				<text key="addr:housename" text="House name" match="key" alternative_autocomplete_keys="name" />
+				<text key="addr:full" text="Full Address (rarely used)" match="key" alternative_autocomplete_keys="name" />
+				<space />
+				<text key="addr:floor" text="Floor (level)Number Address" use_last_as_default="force" match="key" alternative_autocomplete_keys="name" />
+				<text key="level" text="Building Level" use_last_as_default="force" match="key" alternative_autocomplete_keys="name" />
             </optional>
         </item>
         <item name="Address Interpolation" icon="presets/interpolation.png" type="way" preset_name_label="true">
@@ -6807,7 +6821,7 @@ Note that for a match, at least one positive and no negative is required.
             <text key="website" text="Website" match="key" />
             <text key="email" text="Email Address" match="key" />
             <space />
-            <text key="wikipedia" text="Wikipedia" />
+            <text key="wikipedia" text="Wikipedia" default="en:" />
             <text key="image" text="Image" />
         </item>
         <item name="Contact (schema with 'contact:*' prefix)" icon="presets/contact.png" type="node,way,closedway,relation" preset_name_label="true">
@@ -6826,7 +6840,7 @@ Note that for a match, at least one positive and no negative is required.
             <text key="contact:website" text="Website" match="key" />
             <text key="contact:email" text="Email Address" match="key" />
             <space />
-            <text key="wikipedia" text="Wikipedia" />
+            <text key="wikipedia" text="Wikipedia" default="en:" />
             <text key="image" text="Image" />
         </item>
     </group> <!-- Annotation -->
