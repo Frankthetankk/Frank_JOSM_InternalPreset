@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
 author="Frankthetankk"
-version="1.03_2014-05-17"
+version="1.04_2014-05-17"
  
 description="My Tags Changes for Internal Presets Defaults"
 shortdescription="My Internal Preset Changes">
@@ -318,6 +318,9 @@ Note that for a match, at least one positive and no negative is required.
 			<check key="payment:visa" text="Visa" />
 			<check key="payment:american_express" text="American Express" />
 			<check key="payment:discover_card" text="Discover Card" />
+			<check key="payment:sms" text="Phone Text (SMS)" />
+			<check key="payment:paypal" text="Paypal" />
+			<check key="payment:bitcoin" text="Bitcoin" />
 		</optional>
     </chunk>
     <chunk id="payment_account">
@@ -372,10 +375,9 @@ Note that for a match, at least one positive and no negative is required.
   <chunk id="link_addresses">
     <preset_link preset_name="Addresses" />
   </chunk>
-<!--  <chunk id="payment_base">
-	<preset_link preset_name="payment_base" />
+  <chunk id="payment_base">
+	<preset_link preset_name="Payment" />
   </chunk>
-  -->
   <!--  Groups -->
   <group name="Highways" icon="presets/way_secondary.png">
     <group name="Streets" icon="presets/way_secondary.png">
@@ -6954,6 +6956,23 @@ Note that for a match, at least one positive and no negative is required.
             <space />
             <text key="wikipedia" text="Wikipedia" default="en:" />
             <text key="image" text="Image" />
+        </item>
+		<item name="Payment" type="node,way,closedway,relation" preset_name_label="true">
+        <space />
+        <check key="payment:coins" text="Coins (change)" default="on"/>
+        <check key="payment:notes" text="Paper Money" default="on"/>
+        <check key="payment:cherque" text="Checks (cherque)" />
+        <check key="payment:debit_cards" text="Debit cards" default="on"/>
+        <check key="payment:credit_cards" text="Credit cards" default="on"/>
+        <optional>
+			<check key="payment:mastercard" text="Mastercard" />
+			<check key="payment:visa" text="Visa" />
+			<check key="payment:american_express" text="American Express" />
+			<check key="payment:discover_card" text="Discover Card" />
+			<check key="payment:sms" text="Phone Text (SMS)" />
+			<check key="payment:paypal" text="Paypal" />
+			<check key="payment:bitcoin" text="Bitcoin" />
+		</optional>
         </item>
     </group> <!-- Annotation -->
     <group name="Relations" icon="presets/relations.png">
