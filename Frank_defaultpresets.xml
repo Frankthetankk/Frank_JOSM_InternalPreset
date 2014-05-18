@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
 author="Frankthetankk"
-version="1.05_2014-05-17"
+version="1.06_2014-05-18"
  
 description="My Tags Changes for Internal Presets Defaults"
 shortdescription="My Internal Preset Changes">
@@ -376,7 +376,7 @@ Note that for a match, at least one positive and no negative is required.
     <preset_link preset_name="Addresses" />
   </chunk>
   <chunk id="link_payment_base">
-	<preset_link preset_name="Payment" />
+	<preset_link preset_name="Payments" />
   </chunk>
   <!--  Groups -->
   <group name="Highways" icon="presets/way_secondary.png">
@@ -6957,19 +6957,27 @@ Note that for a match, at least one positive and no negative is required.
             <text key="wikipedia" text="Wikipedia" default="en:" />
             <text key="image" text="Image" />
         </item>
-		<item name="Payment" type="node,way,closedway,relation" preset_name_label="true">
-			<link href="http://wiki.openstreetmap.org/wiki/Payment" />
+		<item name="Payments" icon="presets/contact.png" type="node,way,closedway,relation" preset_name_label="true">
+			<link href="http://wiki.openstreetmap.org/wiki/Payment"
+				  cs.href="http://wiki.openstreetmap.org/wiki/Cs:Payment"
+                  de.href="http://wiki.openstreetmap.org/wiki/DE:Payment"
+                  fr.href="http://wiki.openstreetmap.org/wiki/FR:Payment"
+                  ja.href="http://wiki.openstreetmap.org/wiki/JA:Payment"
+                  pl.href="http://wiki.openstreetmap.org/wiki/Pl:Payment"
+                  pt_BR.href="http://wiki.openstreetmap.org/wiki/Pt-br:Payment"
+                  ru.href="http://wiki.openstreetmap.org/wiki/RU:Payment" />
 		  <space />
 			<check key="payment:coins" text="Coins (change)" default="on"/>
 			<check key="payment:notes" text="Paper Money" default="on"/>
 			<check key="payment:cherque" text="Checks (cherque)" />
 			<check key="payment:debit_cards" text="Debit cards" default="on"/>
 			<check key="payment:credit_cards" text="Credit cards" default="on"/>
-			<optional>
+		<optional>
 			<check key="payment:mastercard" text="Mastercard" />
 			<check key="payment:visa" text="Visa" />
 			<check key="payment:american_express" text="American Express" />
 			<check key="payment:discover_card" text="Discover Card" />
+		  <space />
 			<check key="payment:sms" text="Phone Text (SMS)" />
 			<check key="payment:paypal" text="Paypal" />
 			<check key="payment:bitcoin" text="Bitcoin" />
