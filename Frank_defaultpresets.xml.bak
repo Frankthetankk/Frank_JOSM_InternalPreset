@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
 author="Frankthetankk"
-version="1.16_2014-05-19"
+version="1.17_2014-05-19"
  
 description="My Tags Changes for Internal Presets Defaults"
 shortdescription="My Internal Preset Changes">
@@ -168,14 +168,14 @@ Note that for a match, at least one positive and no negative is required.
 -->
     <!-- Item chunks -->
 	<chunk id="source_base">
-		<text key="source" text="Source Local Knowledge" value="local knowledge" default="local knowledge" />
-		<text key="source:ref" text="Source Reference" value="frankthetankk" default="frankthtankk" />
-		<text key="source:date" text="Source Date (current date YYYY-MM-DD)" use_last_as_default="force" />
+		<combo key="source" text="Source Local Knowledge" values="local knowledge" default="local knowledge" />
+		<combo key="source:ref" text="Source Reference" values="frankthetankk" default="frankthtankk" />
+		<combo key="source:date" text="Source Date (current date YYYY-MM-DD)" use_last_as_default="force" />
 	</chunk>
 	<chunk id="source_base_maxspeed">
         <reference ref="source_base" />
-		<text key="source:maxspeed" text="source:maxspeed=sign" value="sign" default="sign" />
-		<text key="maxspeed:type" text="maxspeed:type=sign" value="sign" default="sign" />
+		<combo key="source:maxspeed" text="source:maxspeed=sign" value="sign" default="sign" />
+		<combo key="maxspeed:type" text="maxspeed:type=sign" value="sign" default="sign" />
 	</chunk>
     <chunk id="surface">
         <combo key="surface" text="Surface" values="paved,unpaved,dirt,asphalt,concrete,concrete:plates,compacted,earth,ice,snow,metal,wood,artificial_turf,paving_stones,cobblestone,gravel,pebblestone,compacted,grass_paver,grass,mud,sand,ground,sett,tartan" />

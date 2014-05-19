@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
 author="Frankthetankk"
-version="1.17_2014-05-19"
+version="1.18_2014-05-19"
  
 description="My Tags Changes for Internal Presets Defaults"
 shortdescription="My Internal Preset Changes">
@@ -186,7 +186,6 @@ Note that for a match, at least one positive and no negative is required.
 		<combo key="lanes:forward" text="Number of Lanes Forward" values="1,2,3,4,5" default="1" />
 		<combo key="lanes:backward" text="Number of Lanes Backward" values="1,2,3,4,5" default="1" />
         <combo key="maxspeed" text="Max. speed (km/h)" values="5 mph, 10 mph, 15 mph, 20 mph, 25 mph, 30 mph, 35 mph, 40 mph, 45 mph, 50 mph, 55 mph, 60 mph, 65 mph, 70 mph, 75 mph" length="6" use_last_as_default="true" match="key" />
-		<combo key="source:maxspeed" text="source:maxspeed=sign" value="sign" default="sign" />
         <reference ref="surface" />
         <reference ref="source_base_maxspeed" />
     </chunk>
