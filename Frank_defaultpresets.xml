@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
 author="Frankthetankk"
-version="1.11_2014-05-19"
+version="1.12_2014-05-19"
  
 description="My Tags Changes for Internal Presets Defaults"
 shortdescription="My Internal Preset Changes">
@@ -1610,7 +1610,7 @@ Note that for a match, at least one positive and no negative is required.
             <key key="waterway" value="drain" />
             <text key="name" text="Name" />
 			<combo key="tunnel" values="yes,culvert,no,building_passage,avalanche_protector" default="culvert" />
-			<reference ref="surface" default="concrete" />
+			<reference ref="surface" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
         </item>
@@ -1624,7 +1624,7 @@ Note that for a match, at least one positive and no negative is required.
             <key key="waterway" value="ditch" />
             <text key="name" text="Name" />
 			<combo key="tunnel" values="yes,culvert,no,building_passage,avalanche_protector" default="culvert" />
-			<reference ref="surface" default="earth" />
+			<reference ref="surface" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
         </item>
@@ -1642,7 +1642,7 @@ Note that for a match, at least one positive and no negative is required.
             <key key="waterway" value="stream" />
             <text key="name" text="Name" />
 			<combo key="tunnel" values="yes,culvert,no,building_passage,avalanche_protector" default="culvert" />
-			<reference ref="surface" default="earth" />
+			<reference ref="surface" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
         </item>
@@ -1652,7 +1652,7 @@ Note that for a match, at least one positive and no negative is required.
             <key key="waterway" value="wadi" />
             <text key="name" text="Name" />
 			<combo key="tunnel" values="yes,culvert,no,building_passage,avalanche_protector" default="culvert" />
-			<reference ref="surface" default="earth" />
+			<reference ref="surface" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
         </item>
@@ -1668,7 +1668,7 @@ Note that for a match, at least one positive and no negative is required.
             <key key="waterway" value="canal" />
             <reference ref="name_wikipedia" />
 			<combo key="tunnel" values="yes,culvert,no,building_passage,avalanche_protector" />
-			<reference ref="surface" default="concrete" />
+			<reference ref="surface" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
         </item>
@@ -1684,7 +1684,7 @@ Note that for a match, at least one positive and no negative is required.
             <key key="waterway" value="river" />
             <reference ref="name_wikipedia" />
 			<combo key="tunnel" values="yes,culvert,no,building_passage,avalanche_protector" />
-			<reference ref="surface" default="earth" />
+			<reference ref="surface" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
         </item>
@@ -1728,7 +1728,7 @@ Note that for a match, at least one positive and no negative is required.
                   ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:waterway=dam" />
             <space />
             <key key="waterway" value="dam" />
-			<reference ref="surface" default="concrete" />
+			<reference ref="surface" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <reference ref="name_wikipedia" />
         </item>
@@ -1760,7 +1760,7 @@ Note that for a match, at least one positive and no negative is required.
             <key key="tunnel" value="culvert" />
             <optional>
                 <text key="name" text="Name" />
-			<reference ref="surface" default="concrete" />
+			<reference ref="surface" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
                 <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
                 <text key="width" text="Width (meters)" />
