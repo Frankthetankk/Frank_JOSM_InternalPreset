@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
 author="Frankthetankk"
-version="1.08_2014-05-18"
+version="1.09_2014-05-19"
  
 description="My Tags Changes for Internal Presets Defaults"
 shortdescription="My Internal Preset Changes">
@@ -168,12 +168,12 @@ Note that for a match, at least one positive and no negative is required.
 -->
     <!-- Item chunks -->
     <chunk id="surface">
-        <combo key="surface" text="Surface" values="paved,unpaved,asphalt,concrete,metal,wood,paving_stones,cobblestone,gravel,pebblestone,compacted,grass_paver,grass,sand,ground,sett" />
+        <combo key="surface" text="Surface" values="paved,unpaved,dirt,asphalt,concrete,concrete:plates,compacted,earth,ice,snow,metal,wood,artificial_turf,paving_stones,cobblestone,gravel,pebblestone,compacted,grass_paver,grass,mud,sand,ground,sett,tartan" />
     </chunk>
     <chunk id="highway_base">
         <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3"/>
         <combo key="lanes" text="Lanes" values="1,2,3,4,5" length="3"/>
-        <text key="maxspeed" text="Max. speed (km/h)"/>
+        <text key="maxspeed" text="Max. speed (km/h)" values="5 mph, 10 mph, 15 mph, 20 mph, 25 mph, 30 mph, 35 mph, 40 mph, 45 mph, 50 mph, 55 mph, 60 mph, 65 mph, 70 mph, 75 mph" length="6" use_last_as_default="true" match="key" />
         <reference ref="surface" />
     </chunk>
     <chunk id="highway_yesno_incline">
@@ -642,7 +642,7 @@ Note that for a match, at least one positive and no negative is required.
             <combo key="highway" text="Highway type" values="residential,service,unclassified,path,cycleway" values_context="Highway" default="residential" />
             <text key="name" text="Name" />
             <combo key="vehicle" text="Vehicle access" values="yes,no,destination" default="no" />
-            <text key="maxspeed" text="Max. speed (km/h)" default="30" />
+            <text key="maxspeed" text="Max. speed (km/h)" values="5 mph, 10 mph, 15 mph, 20 mph, 25 mph, 30 mph, 35 mph, 40 mph" length="6" use_last_as_default="true" match="key"/>
             <optional>
                 <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" />
                 <combo key="lanes" text="Lanes" values="1,2,3,4,5" />
@@ -806,7 +806,7 @@ Note that for a match, at least one positive and no negative is required.
             <combo key="hov" text="High-occupancy vehicles (hov)" values="yes,official,designated,destination,permissive,private,no" match="key" />
             <combo key="psv" text="Public Service Vehicles (psv)" values="yes,official,designated,destination,permissive,private,no" match="key" />
             <combo key="tourist_bus" text="Tourist buses" values="yes,no" match="key" />
-            <text key="maxspeed" text="Max. speed (km/h)" />
+            <text key="maxspeed" text="Max. speed (km/h)" values="5 mph, 10 mph, 15 mph, 20 mph, 25 mph, 30 mph, 35 mph, 40 mph, 45 mph, 50 mph, 55 mph, 60 mph, 65 mph, 70 mph, 75 mph" length="6" use_last_as_default="true" match="key" />
             <text key="minspeed" text="Min. speed (km/h)" match="key" />
             <text key="maxweight" text="Max. weight (tonnes)" match="key" />
             <text key="maxaxleload" text="Max. axleload (tonnes)" match="key" />
@@ -853,7 +853,7 @@ Note that for a match, at least one positive and no negative is required.
             <optional>
                 <text key="name" text="Name" />
                 <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="1" length="3" />
-                <text key="maxspeed" text="Max. speed (km/h)" />
+                <text key="maxspeed" text="Max. speed (km/h)" values="5 mph, 10 mph, 15 mph, 20 mph, 25 mph, 30 mph, 35 mph, 40 mph, 45 mph, 50 mph, 55 mph, 60 mph, 65 mph, 70 mph, 75 mph" length="6" use_last_as_default="true" match="key" />
                 <text key="maxweight" text="Max. weight (tonnes)" />
                 <combo key="incline" text="Incline" values="10%,-10%,10°,-10°,up,down" />
                 <text key="width" text="Width (meters)" />
@@ -951,7 +951,7 @@ Note that for a match, at least one positive and no negative is required.
             <key key="highway" value="bridleway" />
             <optional>
                 <reference ref="name_layer" />
-                <text key="maxspeed" text="Max. speed (km/h)" />
+                <text key="maxspeed" text="Max. speed (km/h)" values="5 mph, 10 mph, 15 mph, 20 mph, 25 mph, 30 mph, 35 mph, 40 mph, 45 mph, 50 mph, 55 mph, 60 mph, 65 mph, 70 mph, 75 mph" length="6" use_last_as_default="true" match="key" />
                 <reference ref="surface" />
                 <reference ref="highway_yesno_incline_oneway_lit" />
                 <text key="width" text="Width (meters)" />
@@ -1211,7 +1211,7 @@ Note that for a match, at least one positive and no negative is required.
                   ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:highway=speed_camera" />
             <key key="highway" value="speed_camera" />
             <optional>
-                <text key="maxspeed" text="Max. speed (km/h)" />
+                <text key="maxspeed" text="Max. speed (km/h)" values="5 mph, 10 mph, 15 mph, 20 mph, 25 mph, 30 mph, 35 mph, 40 mph, 45 mph, 50 mph, 55 mph, 60 mph, 65 mph, 70 mph, 75 mph" length="6" use_last_as_default="true" match="key" />
             </optional>
         </item>
         <separator/>
@@ -1342,7 +1342,7 @@ Note that for a match, at least one positive and no negative is required.
                   ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:barrier=fence" />
             <key key="barrier" value="fence" />
             <optional>
-                <combo key="fence_type" text="Type" values="barbed_wire,chain_link,electric,metal,pole,split_rail,wire,wood" />
+                <combo key="fence_type" text="Type" values="bars,barbed_wire,chain_link,electric,metal,pole,railing,split_rail,wire,wood" />
                 <text key="height" text="Height (meters)" length="7" />
             </optional>
         </item> <!-- fence -->
@@ -1505,12 +1505,14 @@ Note that for a match, at least one positive and no negative is required.
                   pt_BR.href="http://wiki.openstreetmap.org/wiki/Pt-br:Key:tunnel"
                   ru.href="http://wiki.openstreetmap.org/wiki/RU:Key:tunnel"
                   uk.href="http://wiki.openstreetmap.org/wiki/Uk:Key:tunnel" />
-            <key key="tunnel" value="yes" />
+            <key key="tunnel" values="yes,culvert,no,building_passage,avalanche_protector" default="yes" />
+			<reference ref="surface" />
             <optional>
                 <text key="name" text="Name" />
                 <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
+                <combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
                 <text key="width" text="Width (meters)" />
-                <text key="maxspeed" text="Max. speed (km/h)" />
+                <text key="maxspeed" text="Max. speed (km/h)" values="5 mph, 10 mph, 15 mph, 20 mph, 25 mph, 30 mph, 35 mph, 40 mph, 45 mph, 50 mph, 55 mph, 60 mph, 65 mph, 70 mph, 75 mph" length="6" use_last_as_default="true" match="key" />
                 <combo key="incline" text="Incline" values="10%,-10%,10°,-10°,up,down" />
                 <check key="toll" text="Toll" />
             </optional>
@@ -1529,7 +1531,7 @@ Note that for a match, at least one positive and no negative is required.
             <optional>
                 <reference ref="name_layer" />
                 <text key="width" text="Width (meters)" />
-                <text key="maxspeed" text="Max. speed (km/h)" />
+                <text key="maxspeed" text="Max. speed (km/h)" values="5 mph, 10 mph, 15 mph, 20 mph, 25 mph, 30 mph, 35 mph, 40 mph, 45 mph, 50 mph, 55 mph, 60 mph, 65 mph, 70 mph, 75 mph" length="6" use_last_as_default="true" match="key" />
                 <combo key="incline" text="Incline" values="10%,-10%,10°,-10°,up,down" />
             </optional>
         </item>
@@ -1599,6 +1601,9 @@ Note that for a match, at least one positive and no negative is required.
             <space />
             <key key="waterway" value="drain" />
             <text key="name" text="Name" />
+			<key key="tunnel" values="yes,culvert,no,building_passage,avalanche_protector" default="culvert" />
+			<reference ref="surface" default="concrete" />
+			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
         </item>
         <item name="Ditch" icon="presets/waterway.png" type="way" preset_name_label="true">
@@ -1610,6 +1615,9 @@ Note that for a match, at least one positive and no negative is required.
             <space />
             <key key="waterway" value="ditch" />
             <text key="name" text="Name" />
+			<key key="tunnel" values="yes,culvert,no,building_passage,avalanche_protector" default="culvert" />
+			<reference ref="surface" default="earth" />
+			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
         </item>
         <item name="Stream" icon="presets/waterway.png" type="way" preset_name_label="true">
@@ -1625,6 +1633,9 @@ Note that for a match, at least one positive and no negative is required.
             <space />
             <key key="waterway" value="stream" />
             <text key="name" text="Name" />
+			<key key="tunnel" values="yes,culvert,no,building_passage,avalanche_protector" default="culvert" />
+			<reference ref="surface" default="earth" />
+			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
         </item>
         <item name="Wadi" icon="presets/waterway.png" type="way" preset_name_label="true">
@@ -1632,6 +1643,9 @@ Note that for a match, at least one positive and no negative is required.
             <space />
             <key key="waterway" value="wadi" />
             <text key="name" text="Name" />
+			<key key="tunnel" values="yes,culvert,no,building_passage,avalanche_protector" default="culvert" />
+			<reference ref="surface" default="earth" />
+			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
         </item>
         <item name="Canal" icon="presets/waterway.png" type="way" preset_name_label="true">
@@ -1645,6 +1659,9 @@ Note that for a match, at least one positive and no negative is required.
             <space />
             <key key="waterway" value="canal" />
             <reference ref="name_wikipedia" />
+			<key key="tunnel" values="yes,culvert,no,building_passage,avalanche_protector" />
+			<reference ref="surface" default="concrete" />
+			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
         </item>
         <item name="River" icon="presets/river.png" type="way" preset_name_label="true">
@@ -1658,6 +1675,9 @@ Note that for a match, at least one positive and no negative is required.
             <space />
             <key key="waterway" value="river" />
             <reference ref="name_wikipedia" />
+			<key key="tunnel" values="yes,culvert,no,building_passage,avalanche_protector" />
+			<reference ref="surface" default="earth" />
+			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
         </item>
         <separator/>
@@ -1670,6 +1690,7 @@ Note that for a match, at least one positive and no negative is required.
                   ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:natural=spring" />
             <space />
             <key key="natural" value="spring" />
+			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <text key="name" text="Name" />
         </item>
         <item name="Waterfall" icon="presets/waterfall.png" type="node,way" preset_name_label="true">
@@ -1699,6 +1720,8 @@ Note that for a match, at least one positive and no negative is required.
                   ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:waterway=dam" />
             <space />
             <key key="waterway" value="dam" />
+			<reference ref="surface" default="concrete" />
+			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <reference ref="name_wikipedia" />
         </item>
         <item name="Groyne" icon="presets/groyne.png" type="node,way,closedway" preset_name_label="true">
@@ -1729,6 +1752,8 @@ Note that for a match, at least one positive and no negative is required.
             <key key="tunnel" value="culvert" />
             <optional>
                 <text key="name" text="Name" />
+			<reference ref="surface" default="concrete" />
+			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
                 <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
                 <text key="width" text="Width (meters)" />
                 <combo key="incline" text="Incline" values="10%,-10%,10°,-10°,up,down" />
@@ -2023,7 +2048,7 @@ Note that for a match, at least one positive and no negative is required.
                 <reference ref="highway_yesno_incline_oneway" />
                 <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
                 <reference ref="surface" />
-                <text key="maxspeed" text="Max. speed (km/h)" />
+                <text key="maxspeed" text="Max. speed (km/h)" values="5 mph, 10 mph, 15 mph, 20 mph, 25 mph, 30 mph, 35 mph, 40 mph, 45 mph, 50 mph, 55 mph, 60 mph, 65 mph, 70 mph, 75 mph" length="6" use_last_as_default="true" match="key" />
                 <text key="width" text="Width (meters)" />
             </optional>
         </item>
@@ -7077,7 +7102,7 @@ Note that for a match, at least one positive and no negative is required.
             <combo key="enforcement" text="Type of enforcement" values="maxheight,maxweight,maxspeed,mindistance,traffic_signals,check " />
             <text key="maxheight" text="Max. height (meters, only if enforcement=maxheight)" />
             <text key="maxweight" text="Max. weight (tonnes, only if enforcement=maxweight)" />
-            <text key="maxspeed" text="Max. speed (km/h, only if enforcement=maxspeed)" />
+            <text key="maxspeed" text="Max. speed (km/h, only if enforcement=maxspeed)" values="5 mph, 10 mph, 15 mph, 20 mph, 25 mph, 30 mph, 35 mph, 40 mph, 45 mph, 50 mph, 55 mph, 60 mph, 65 mph, 70 mph, 75 mph" length="6" use_last_as_default="true" match="key" />
             <roles>
                 <role key="device" text="location of enforcement device" requisite="required" type="node,way,closedway" />
                 <role key="from" text="node on way where enforcement starts" requisite="required" type="node" />
