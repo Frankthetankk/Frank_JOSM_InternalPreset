@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
 author="Frankthetankk"
-version="1.21_2014-05-19"
+version="1.22_2014-05-19"
  
 description="My Tags Changes for Internal Presets Defaults"
 shortdescription="My Internal Preset Changes">
@@ -1434,9 +1434,22 @@ Note that for a match, at least one positive and no negative is required.
         <item name="Kerb" icon="http://wiki.openstreetmap.org/w/images/c/cb/Element_retaining_wall_rend.png" type="way,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:barrier=kerb"
                   pl.href="http://wiki.openstreetmap.org/wiki/Pl:Tag:barrier=kerb" />
-			<label text="(Forward) Right side is bottom, Left side is top" />
+			<label text="Curb. (Forward Direction) Right side is bottom, Left side is top. When tagging ways please ensure you also apply the tag to any node where two ways intersect to help data consumers." />
             <key key="barrier" value="kerb" />
+			<combo key="kerb" text="Kerb Type" values_searchable="true" >
+				<list_entry value="lowered" display_value="Lowered - ~1.5inches - Crossings & driveways" short_description="Lowered kerbs are often found at crossing and driveways. They help ensure the crossing can be used by wheelchair users and allow access to drives. Some names for objects that fall into this category include driveway apron, curb cut (U.S.), curb ramp, dropped kerb (UK), pram ramp, and kerb ramp (Australia). Implies wheelchair=yes." />
+				<list_entry value="raised" display_value="Raised - >1.5inches - Bus stops & older kerbs" short_description="Raised sufficiently to prevent traversal by wheelchairs, as well as an impediment to bicycles. Typically seen at bus stops to provide a level platform to enter bus. This is also the most common kerb at footway crossings before recent accessibility regulations came into existence. Aside from the general method, this can also be added to the highway=bus_stop node or platform node/way. Implies wheelchair=no, and may be used to increase the cost of traveling over this kerb by bicycle." />
+				<list_entry value="flush" display_value="Flush - ~0inches - Crossings & driveways" short_description="Similar to lowered, but kerb isn't of sufficient height to be noticed by blind users. May be combined with tactile paving to solve this issue. Implies wheelchair=yes." />
+				<list_entry value="rolled" display_value="Rolled - N/A - Residential streets" short_description="Rolled is used to designate a curb traversable by vehicles and bicycles, but not wheelchairs. These are sometimes found in planned residential areas, providing access to driveways and sidewalks. This is not to be confused with kerb=lowered, which has a more gentle incline suitable for wheelchair use. Implies wheelchair=no." />
+				<list_entry value="yes" display_value="Yes - Any known" short_description="Some sort of kerb is present, but it can't or hasn't yet been determined whether it is raised, lowered, flush, etc. This may be useful when mapping via aerial imagery (prior to field survey) or if the exact type of kerb can't be recalled. Cautious routers could consider this to mean wheelchair=no, so whenever possible this value should not be used other than on a temporary basis." />
+				<list_entry value="no" display_value="No - Any known" short_description="No kerb is present. This may be useful to make it clear there is no kerb present if there used to be a kerb at this location." />
+			</combo>
             <reference ref="optional_height" />
+			<optional>
+				<text key="kerb:height" text="Exact Height of Curb(Kerb) in (meters)" length="7" >
+				<check key="wheelchair" text="Wheelchair" >
+				<check key="tactile_paving" text="Tactile Paving (Node)" >
+			</optional>
         </item> <!-- kerb -->
         <separator/> <!-- *** access *** -->
         <item name="Entrance (barrier opening)" icon="styles/standard/vehicle/entrance.png" type="node" preset_name_label="true">
