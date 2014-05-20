@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
 author="Frankthetankk"
-version="1.24_2014-05-19"
+version="1.25_2014-05-19"
  
 description="My Tags Changes for Internal Presets Defaults"
 shortdescription="My Internal Preset Changes">
@@ -1445,9 +1445,9 @@ Note that for a match, at least one positive and no negative is required.
 				<list_entry value="no" display_value="No - Any known" short_description="No kerb is present. This may be useful to make it clear there is no kerb present if there used to be a kerb at this location." />
 			</combo>
             <reference ref="optional_height" />
-			<optional>
+			<optional text="Optional:" >
 				<text key="kerb:height" text="Exact Height of Curb(Kerb) in (meters)" length="7" />
-				<check key="wheelchair" text="Wheelchair" >
+				<check key="wheelchair" text="Wheelchair" />
 				<check key="tactile_paving" text="Tactile Paving (Node)" />
 			</optional>
         </item> <!-- kerb -->
