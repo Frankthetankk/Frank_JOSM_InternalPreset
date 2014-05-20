@@ -4800,7 +4800,7 @@ Note that for a match, at least one positive and no negative is required.
             <space />
             <key key="man_made" value="tower" />
             <text key="name" text="Name" />
-            <combo key="tower:type" text="Tower type" values="communication,observation" />
+            <combo key="tower:type" text="Tower type" values="communication,observation,bell_tower,defensive,cooling,lighting" />
             <optional>
                 <text key="height" text="Height (meters)" />
                 <text key="operator" text="Operator" />
@@ -5322,16 +5322,16 @@ Note that for a match, at least one positive and no negative is required.
             <text key="ref" text="Tower reference" />
             <text key="height" text="Height in meter (m)" />
             <combo key="structure" text="Type of construction" values="lattice,tubular,solid " />
-            <combo key="material" text="Material" values="metal,plastic,steel,stone,wood,concrete" />
+            <combo key="material" text="Material" values="metal,plastic,steel,stone,wood,concrete" default="metal" />
             <combo key="colour" text="Color (HTML name or hexadecimal code)" values="black,red,white,gray,red/white" values_context="color" />
             <text key="operator" text="Operator" />
             <text key="branch" text="Branch operator" />
             <optional>
                 <combo key="tower:type" text="Tower type" values="suspension,anchor,termination,branch,transposing,crossing,transition" values_context="power" />
-                <combo key="branch:type" text="Branch tower type" values="tap,split,loop,cross" values_context="power" />
+                <combo key="branch:type" text="Branch tower type (only if tower:type=branch)" values="tap,split,loop,cross" values_context="power" />
                 <combo key="design" text="Tower design" values="one-level,two-level,donau,three-level,barrel,asymmetric,triangle,flag,donau;one-level,four-level,six-level,nine-level,delta,delta_two-level,y-frame,x-frame,h-frame,guyed_h-frame,portal,portal_two-level,portal_three-level,guyed_v-frame,bipole,monopolar" values_context="power" />
-                <check key="triple_tower" text="Triple tower" />
-                <check key="design:incomplete" text="Incomplete tower" />
+                <check key="triple_tower" text="Group of 3 Towers called Triple tower" />
+                <check key="design:incomplete" text="Incomplete tower (carries less conductors than the design is capable of)" />
             </optional>
         </item>
         <item name="Pole" icon="icons/power_tower_low.n.16.png" type="node" preset_name_label="true">
@@ -5349,7 +5349,7 @@ Note that for a match, at least one positive and no negative is required.
             <text key="branch" text="Branch operator" />
             <text key="ref" text="Pole reference" />
             <text key="height" text="Height in meter (m)" />
-            <combo key="material" text="Material" values="metal,plastic,steel,stone,wood,concrete" />
+            <combo key="material" text="Material" values="metal,plastic,steel,stone,wood,concrete" default="wood" />
         </item>
         <item name="Power Line" icon="presets/power.png" type="way" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:power=line"
