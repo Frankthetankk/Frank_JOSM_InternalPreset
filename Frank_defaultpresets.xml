@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
 author="Frankthetankk"
-version="1.18_2014-05-19"
+version="1.20_2014-05-19"
  
 description="My Tags Changes for Internal Presets Defaults"
 shortdescription="My Internal Preset Changes">
@@ -185,7 +185,7 @@ Note that for a match, at least one positive and no negative is required.
         <combo key="lanes" text="Lanes" values="1,2,3,4,5" length="2"/>
 		<combo key="lanes:forward" text="Number of Lanes Forward" values="1,2,3,4,5" default="1" />
 		<combo key="lanes:backward" text="Number of Lanes Backward" values="1,2,3,4,5" default="1" />
-        <combo key="maxspeed" text="Max. speed (km/h)" values="5 mph, 10 mph, 15 mph, 20 mph, 25 mph, 30 mph, 35 mph, 40 mph, 45 mph, 50 mph, 55 mph, 60 mph, 65 mph, 70 mph, 75 mph" length="6" use_last_as_default="true" match="key" />
+        <combo key="maxspeed" text="Max. speed (km/h)" values="5 mph, 10 mph, 15 mph, 20 mph, 25 mph, 30 mph, 35 mph, 40 mph, 45 mph, 50 mph, 55 mph, 60 mph, 65 mph, 70 mph, 75 mph" length="6" use_last_as_default="force" match="key" />
         <reference ref="surface" />
         <reference ref="source_base_maxspeed" />
     </chunk>
@@ -194,7 +194,7 @@ Note that for a match, at least one positive and no negative is required.
         <check key="tunnel" text="Tunnel" />
         <check key="cutting" text="Cutting" />
         <check key="embankment" text="Embankment" />
-        <combo key="incline" text="Incline" values="up,down,forward,backward,10%,-10%,10°,-10°"/>
+        <combo key="incline" text="Incline" values="up,down,10%,-10%,10°,-10°" default="up" use_last_as_default="force" />
     </chunk>
     <chunk id="highway_yesno_incline_oneway">
         <check key="oneway" text="Oneway" />
@@ -319,6 +319,8 @@ Note that for a match, at least one positive and no negative is required.
     <chunk id="name_leisure_pitch">
         <text key="name" text="Name" />
         <combo key="leisure" text="Type" values="pitch,sports_centre,stadium" default="pitch" />
+		<reference ref="surface" />
+		<reference ref="general_access" />
     </chunk>
     <chunk id="payment_base">
         <check key="payment:coins" text="Coins (change)" default="on"/>
@@ -363,6 +365,7 @@ Note that for a match, at least one positive and no negative is required.
     </chunk>
     <chunk id="general_access">
         <combo key="access" text="General Access" values="yes,destination,delivery,permissive,private,customers,agricultural,forestry,no" values_searchable="true" />
+        <reference ref="source_base" />
     </chunk>
     <chunk id="name_wikipedia">
         <text key="name" text="Name" />
@@ -879,7 +882,7 @@ Note that for a match, at least one positive and no negative is required.
                 <combo key="maxspeed" text="Max. speed (km/h)" values="5 mph, 10 mph, 15 mph, 20 mph, 25 mph, 30 mph, 35 mph, 40 mph, 45 mph, 50 mph, 55 mph, 60 mph, 65 mph, 70 mph, 75 mph" length="6" use_last_as_default="true" match="key" />
 				<combo key="source:maxspeed" text="source:maxspeed=*" values="sign" default="sign" />
                 <text key="maxweight" text="Max. weight (tonnes)" />
-                <combo key="incline" text="Incline" values="10%,-10%,10°,-10°,up,down" />
+		        <combo key="incline" text="Incline" values="up,down,10%,-10%,10°,-10°" default="up" use_last_as_default="force" />
                 <text key="width" text="Width (meters)" />
                 <check key="toll" text="Toll" />
             </optional>
@@ -894,7 +897,7 @@ Note that for a match, at least one positive and no negative is required.
             <key key="ford" value="yes" />
             <optional>
                 <text key="name" text="Name" />
-                <combo key="incline" text="Incline" values="10%,-10%,10°,-10°,up,down" />
+		        <combo key="incline" text="Incline" values="up,down,10%,-10%,10°,-10°" default="up" use_last_as_default="force" />
             </optional>
         </item>
     </group> <!-- Streets -->
@@ -1421,7 +1424,7 @@ Note that for a match, at least one positive and no negative is required.
                 <text key="width" text="Width (meters)" length="7" />
             </optional>
         </item> <!-- ditch -->
-        <item name="Kerb" type="way,closedway" preset_name_label="true">
+        <item name="Kerb" icon="http://wiki.openstreetmap.org/w/images/c/cb/Element_retaining_wall_rend.png" text="(Forward) Right side is bottom, Left side is top." type="way,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:barrier=kerb"
                   pl.href="http://wiki.openstreetmap.org/wiki/Pl:Tag:barrier=kerb" />
             <key key="barrier" value="kerb" />
@@ -1540,7 +1543,7 @@ Note that for a match, at least one positive and no negative is required.
                 <text key="width" text="Width (meters)" />
                 <combo key="maxspeed" text="Max. speed (km/h)" values="5 mph, 10 mph, 15 mph, 20 mph, 25 mph, 30 mph, 35 mph, 40 mph, 45 mph, 50 mph, 55 mph, 60 mph, 65 mph, 70 mph, 75 mph" length="6" use_last_as_default="true" match="key" />
 				<combo key="source:maxspeed" text="source:maxspeed=*" values="sign" default="sign" />
-                <combo key="incline" text="Incline" values="10%,-10%,10°,-10°,up,down" />
+		        <combo key="incline" text="Incline" values="up,down,10%,-10%,10°,-10°" default="up" use_last_as_default="force" />
                 <check key="toll" text="Toll" />
             </optional>
         </item>
@@ -1560,7 +1563,7 @@ Note that for a match, at least one positive and no negative is required.
                 <text key="width" text="Width (meters)" />
                 <combo key="maxspeed" text="Max. speed (km/h)" values="5 mph, 10 mph, 15 mph, 20 mph, 25 mph, 30 mph, 35 mph, 40 mph, 45 mph, 50 mph, 55 mph, 60 mph, 65 mph, 70 mph, 75 mph" length="6" use_last_as_default="true" match="key" />
 				<combo key="source:maxspeed" text="source:maxspeed=*" values="sign" default="sign" />
-                <combo key="incline" text="Incline" values="10%,-10%,10°,-10°,up,down" />
+		        <combo key="incline" text="Incline" values="up,down,10%,-10%,10°,-10°" default="up" use_last_as_default="force" />
             </optional>
         </item>
         <item name="Arcade" type="way" preset_name_label="true">
@@ -1612,7 +1615,7 @@ Note that for a match, at least one positive and no negative is required.
             <optional>
                 <reference ref="name_layer" />
                 <text key="width" text="Width (meters)" />
-                <combo key="incline" text="Incline" values="10%,-10%,10°,-10°,up,down" />
+		        <combo key="incline" text="Incline" values="up,down,10%,-10%,10°,-10°" default="up" use_last_as_default="force" />
             </optional>
         </item>
     </group>
@@ -1784,7 +1787,7 @@ Note that for a match, at least one positive and no negative is required.
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
                 <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
                 <text key="width" text="Width (meters)" />
-                <combo key="incline" text="Incline" values="10%,-10%,10°,-10°,up,down" />
+		        <combo key="incline" text="Incline" values="up,down,10%,-10%,10°,-10°" default="up" use_last_as_default="force" />
             </optional>
         </item>
         <separator/>
@@ -4797,7 +4800,7 @@ Note that for a match, at least one positive and no negative is required.
             <space />
             <key key="man_made" value="tower" />
             <text key="name" text="Name" />
-            <combo key="tower:type" text="Tower type" values="communication,observation" />
+            <combo key="tower:type" text="Tower type" values="communication,observation,bell_tower,defensive,cooling,lighting" />
             <optional>
                 <text key="height" text="Height (meters)" />
                 <text key="operator" text="Operator" />
@@ -5319,16 +5322,16 @@ Note that for a match, at least one positive and no negative is required.
             <text key="ref" text="Tower reference" />
             <text key="height" text="Height in meter (m)" />
             <combo key="structure" text="Type of construction" values="lattice,tubular,solid " />
-            <combo key="material" text="Material" values="metal,plastic,steel,stone,wood,concrete" />
+            <combo key="material" text="Material" values="metal,plastic,steel,stone,wood,concrete" default="metal" />
             <combo key="colour" text="Color (HTML name or hexadecimal code)" values="black,red,white,gray,red/white" values_context="color" />
             <text key="operator" text="Operator" />
             <text key="branch" text="Branch operator" />
             <optional>
                 <combo key="tower:type" text="Tower type" values="suspension,anchor,termination,branch,transposing,crossing,transition" values_context="power" />
-                <combo key="branch:type" text="Branch tower type" values="tap,split,loop,cross" values_context="power" />
+                <combo key="branch:type" text="Branch tower type (only if tower:type=branch)" values="tap,split,loop,cross" values_context="power" />
                 <combo key="design" text="Tower design" values="one-level,two-level,donau,three-level,barrel,asymmetric,triangle,flag,donau;one-level,four-level,six-level,nine-level,delta,delta_two-level,y-frame,x-frame,h-frame,guyed_h-frame,portal,portal_two-level,portal_three-level,guyed_v-frame,bipole,monopolar" values_context="power" />
-                <check key="triple_tower" text="Triple tower" />
-                <check key="design:incomplete" text="Incomplete tower" />
+                <check key="triple_tower" text="Group of 3 Towers called Triple tower" />
+                <check key="design:incomplete" text="Incomplete tower (carries less conductors than the design is capable of)" />
             </optional>
         </item>
         <item name="Pole" icon="icons/power_tower_low.n.16.png" type="node" preset_name_label="true">
@@ -5346,7 +5349,7 @@ Note that for a match, at least one positive and no negative is required.
             <text key="branch" text="Branch operator" />
             <text key="ref" text="Pole reference" />
             <text key="height" text="Height in meter (m)" />
-            <combo key="material" text="Material" values="metal,plastic,steel,stone,wood,concrete" />
+            <combo key="material" text="Material" values="metal,plastic,steel,stone,wood,concrete" default="wood" />
         </item>
         <item name="Power Line" icon="presets/power.png" type="way" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:power=line"
