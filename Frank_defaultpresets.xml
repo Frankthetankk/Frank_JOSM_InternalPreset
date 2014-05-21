@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
 author="Frankthetankk"
-version="1.25_2014-05-19"
+version="1.28_2014-05-19"
  
 description="My Tags Changes for Internal Presets Defaults"
 shortdescription="My Internal Preset Changes">
@@ -3150,6 +3150,7 @@ Note that for a match, at least one positive and no negative is required.
             <reference ref="name_operator" />
             <multiselect key="cuisine" text="Cuisine" values="italian;chinese;pizza;burger;greek;german;indian;regional;kebab;turkish;asian;thai;mexican;japanese;french;sandwich;sushi" values_searchable="true" />
             <check key="microbrewery" text="Microbrewery" />
+			<check key="delivery" text="Delivery" />
             <reference ref="oh" />
             <combo key="stars" text="Stars" values="1,2,3,4,5,6,7" />
             <space />
@@ -3169,6 +3170,7 @@ Note that for a match, at least one positive and no negative is required.
             <combo key="cuisine" text="Cuisine" values="italian,chinese,pizza,burger,greek,german,indian,regional,kebab,turkish,asian,thai,mexican,japanese,french,sandwich,sushi,fish_and_chips,chicken" />
             <reference ref="oh" />
             <space />
+			<check key="drive_through" text="Drive through" />
             <reference ref="internet_smoking_wheelchair" />
             <space />
             <reference ref="contact" />
@@ -4091,7 +4093,8 @@ Note that for a match, at least one positive and no negative is required.
             <space />
             <key key="amenity" value="pharmacy" />
             <text key="name" text="Name" />
-            <combo key="dispensing" text="Dispensing" values="yes,no" default="no" />
+            <check key="dispensing" text="Dispensing (fill/sell prescription drugs)" />
+			<check key="drive_through" text="Drive through" />
             <reference ref="oh" />
             <reference ref="link_contact" />
             <reference ref="link_addresses" />
@@ -5681,6 +5684,7 @@ Note that for a match, at least one positive and no negative is required.
                   ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:shop=alcohol" />
             <space />
             <key key="shop" value="alcohol" />
+			<check key="drive_through" text="Drive through" />
             <reference ref="name_oh" />
             <reference ref="link_contact" />
             <reference ref="link_addresses" />
@@ -5905,6 +5909,7 @@ Note that for a match, at least one positive and no negative is required.
             <key key="amenity" value="bank" />
             <reference ref="name_brand_operator_oh" />
             <check key="atm" text="Automated Teller Machine" default="on" />
+			<check key="drive_through" text="Drive through" />
             <reference ref="link_contact" />
             <reference ref="link_addresses" />
         </item>
@@ -5938,6 +5943,7 @@ Note that for a match, at least one positive and no negative is required.
             <key key="amenity" value="atm" />
             <text key="brand" text="Brand" />
             <text key="operator" text="Operator" />
+			<check key="drive_through" text="Drive through" />
             <reference ref="name_oh" />
             <reference ref="link_contact" />
             <reference ref="link_addresses" />
@@ -6973,9 +6979,9 @@ Note that for a match, at least one positive and no negative is required.
             <optional>
                 <text key="addr:street" text="Street name" use_last_as_default="force" match="key" alternative_autocomplete_keys="name" />
                 <text key="addr:city" text="City name" use_last_as_default="force" match="key" />
-				<text key="addr:state" text="State" default="CA" match="key" alternative_autocomplete_keys="name" />
+				<text key="addr:state" text="State" default="CA" match="key" use_last_as_default="force" />
                 <text key="addr:postcode" text="Post code" use_last_as_default="force" match="key" />
-                <combo key="addr:country" text="Country code" values_from="java.util.Locale#getISOCountries" default="US" match="key" />
+                <combo key="addr:country" text="Country code" values_from="java.util.Locale#getISOCountries" default="US" use_last_as_default="force" match="key" />
 				<text key="addr:unit" text="Unit Address" match="key" alternative_autocomplete_keys="name" />
 				<space />
 				<text key="addr:door" text="Door Name" match="key" alternative_autocomplete_keys="name" />

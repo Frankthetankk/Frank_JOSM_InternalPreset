@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
 author="Frankthetankk"
-version="1.24_2014-05-19"
+version="1.27_2014-05-19"
  
 description="My Tags Changes for Internal Presets Defaults"
 shortdescription="My Internal Preset Changes">
@@ -1445,9 +1445,9 @@ Note that for a match, at least one positive and no negative is required.
 				<list_entry value="no" display_value="No - Any known" short_description="No kerb is present. This may be useful to make it clear there is no kerb present if there used to be a kerb at this location." />
 			</combo>
             <reference ref="optional_height" />
-			<optional>
+			<optional text="Optional:" >
 				<text key="kerb:height" text="Exact Height of Curb(Kerb) in (meters)" length="7" />
-				<check key="wheelchair" text="Wheelchair" >
+				<check key="wheelchair" text="Wheelchair" />
 				<check key="tactile_paving" text="Tactile Paving (Node)" />
 			</optional>
         </item> <!-- kerb -->
@@ -3150,6 +3150,7 @@ Note that for a match, at least one positive and no negative is required.
             <reference ref="name_operator" />
             <multiselect key="cuisine" text="Cuisine" values="italian;chinese;pizza;burger;greek;german;indian;regional;kebab;turkish;asian;thai;mexican;japanese;french;sandwich;sushi" values_searchable="true" />
             <check key="microbrewery" text="Microbrewery" />
+			<check key="delivery" text="Delivery" />
             <reference ref="oh" />
             <combo key="stars" text="Stars" values="1,2,3,4,5,6,7" />
             <space />
@@ -6973,9 +6974,9 @@ Note that for a match, at least one positive and no negative is required.
             <optional>
                 <text key="addr:street" text="Street name" use_last_as_default="force" match="key" alternative_autocomplete_keys="name" />
                 <text key="addr:city" text="City name" use_last_as_default="force" match="key" />
-				<text key="addr:state" text="State" default="CA" match="key" alternative_autocomplete_keys="name" />
+				<text key="addr:state" text="State" default="CA" match="key" use_last_as_default="force" />
                 <text key="addr:postcode" text="Post code" use_last_as_default="force" match="key" />
-                <combo key="addr:country" text="Country code" values_from="java.util.Locale#getISOCountries" default="US" match="key" />
+                <combo key="addr:country" text="Country code" values_from="java.util.Locale#getISOCountries" default="US" use_last_as_default="force" match="key" />
 				<text key="addr:unit" text="Unit Address" match="key" alternative_autocomplete_keys="name" />
 				<space />
 				<text key="addr:door" text="Door Name" match="key" alternative_autocomplete_keys="name" />
