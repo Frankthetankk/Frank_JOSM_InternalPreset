@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
 author="Frankthetankk"
-version="1.30_2014-05-21"
+version="1.32_2014-05-22"
  
 description="My Tags Changes for Internal Presets Defaults"
 shortdescription="My Internal Preset Changes">
@@ -167,6 +167,22 @@ the tags of an OSM object fit into this preset.
 Note that for a match, at least one positive and no negative is required.
 -->
     <!-- Item chunks -->
+	<chunk id="smoothness_base">
+		<combo key="smoothness" text="Smoothness" values_searchable="true" >
+			<list_entry value="excellent" display_value="1 Excellent" short_description="(thin_rollers) roller blade, skate board and all below" >
+			<list_entry value="good" display_value="2 Good" short_description="(thin_wheels) racing bike and all below" >
+			<list_entry value="intermediate" display_value="3 Intermediate" short_description="(wheels) city bike, sport cars, wheel chair, Scooter and all below" >
+			<list_entry value="bad" display_value="4 Bad" short_description="(robust_wheels) trekking bike, normal cars, Rickshaw and all below" >
+			<list_entry value="very_bad" display_value="5 Very Bad" short_description="(high_clearance) Car with high clearance, light-duty off road vehicles" >
+			<list_entry value="horrible" display_value="6 Horrible" short_description="(off_road_wheels) heavy-duty off road vehicles and all below" >
+			<list_entry value="very_horrible" display_value="7 Very Horrible" short_description="(specialized_off_road_wheels) tractor, ATV, tanks, trial, Mountain bike and all kind of off-highway vehicles (see also mtb:scale=*)" >
+			<list_entry value="impassable" display_value="8 Impassable" short_description="No wheeled vehicle (see also sac_scale=*)" >
+		</combo>
+	</chunk>
+	<chunk id="source_name">
+		<combo key="source" text="Source Name/Date" value="frankthetankk 2014-" default="frankthetankk 2014-" use_last_as_default="force" editable="true" />
+		<combo key="source_ref" text="Source_Reference" value="frankthetankk" default="frankthtankk" use_last_as_default="force" editable="true" />
+	</chunk>
 	<chunk id="source_base">
 		<combo key="source" text="Source Local Knowledge" values="local knowledge" default="local knowledge" />
 		<combo key="source:ref" text="Source Reference" values="frankthetankk" default="frankthtankk" />
@@ -201,7 +217,7 @@ Note that for a match, at least one positive and no negative is required.
         <check key="tunnel" text="Tunnel" />
         <check key="cutting" text="Cutting" />
         <check key="embankment" text="Embankment" />
-        <combo key="incline" text="Incline" values="up,down,10%,-10%,10°,-10°" default="up" use_last_as_default="force" />
+        <combo key="incline" text="Incline" values="up,down,10%,-10%,10°,-10°" use_last_as_default="force" />
     </chunk>
     <chunk id="highway_yesno_incline_oneway">
         <check key="oneway" text="Oneway" />
@@ -985,11 +1001,22 @@ Note that for a match, at least one positive and no negative is required.
                   ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:highway=bridleway"
                   uk.href="http://wiki.openstreetmap.org/wiki/Uk:Tag:highway=bridleway" />
             <key key="highway" value="bridleway" />
+			<combo key="designation" text="Designation (Public or Permissive)" values="public_bridleway,permissive_bridleway" default="public_bridleway" />
+			<combo key="horse" text="Horse Designated Trail" values="designated" default="designated" />
+			<combo key="smoothness" text="Smoothness" values_searchable="true" default="bad" >
+				<list_entry value="excellent" display_value="1 Excellent" short_description="(thin_rollers) roller blade, skate board and all below" >
+				<list_entry value="good" display_value="2 Good" short_description="(thin_wheels) racing bike and all below" >
+				<list_entry value="intermediate" display_value="3 Intermediate" short_description="(wheels) city bike, sport cars, wheel chair, Scooter and all below" >
+				<list_entry value="bad" display_value="4 Bad" short_description="(robust_wheels) trekking bike, normal cars, Rickshaw and all below" >
+				<list_entry value="very_bad" display_value="5 Very Bad" short_description="(high_clearance) Car with high clearance, light-duty off road vehicles" >
+				<list_entry value="horrible" display_value="6 Horrible" short_description="(off_road_wheels) heavy-duty off road vehicles and all below" >
+				<list_entry value="very_horrible" display_value="7 Very Horrible" short_description="(specialized_off_road_wheels) tractor, ATV, tanks, trial, Mountain bike and all kind of off-highway vehicles (see also mtb:scale=*)" >
+				<list_entry value="impassable" display_value="8 Impassable" short_description="No wheeled vehicle (see also sac_scale=*)" >
+			</combo>
             <optional>
                 <reference ref="name_layer" />
-				<combo key="maxspeed" text="Max. speed (km/h)" values="5 mph,10 mph,15 mph,20 mph,25 mph,30 mph,35 mph,40 mph,45 mph,50 mph,55 mph,60 mph,65 mph,70 mph,75 mph" length="6" use_last_as_default="force" match="key" />
-				<combo key="source:maxspeed" text="source:maxspeed=*" values="sign" default="sign" />
-                <reference ref="surface" />
+				<combo key="surface" text="Surface" values="paved,unpaved,dirt,asphalt,concrete,concrete:plates,compacted,earth,ice,snow,metal,wood,artificial_turf,paving_stones,cobblestone,gravel,pebblestone,compacted,grass_paver,grass,mud,sand,ground,sett,tartan" default="earth" length="6" use_last_as_default="force" />
+				<reference ref="source_name" />
                 <reference ref="highway_yesno_incline_oneway_lit" />
                 <text key="width" text="Width (meters)" />
             </optional>
