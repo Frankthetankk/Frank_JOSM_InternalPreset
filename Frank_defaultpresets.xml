@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
 author="Frankthetankk"
-version="1.28_2014-05-19"
+version="1.31_2014-05-22"
  
 description="My Tags Changes for Internal Presets Defaults"
 shortdescription="My Internal Preset Changes">
@@ -167,6 +167,10 @@ the tags of an OSM object fit into this preset.
 Note that for a match, at least one positive and no negative is required.
 -->
     <!-- Item chunks -->
+	<chunk id="source_name">
+		<combo key="source" text="Source Name/Date" value="frankthetankk 2014-" default="frankthetankk 2014-" use_last_as_default="force" editable="true" />
+		<combo key="source_ref" text="Source_Reference" value="frankthetankk" default="frankthtankk" use_last_as_default="force" editable="true" />
+	</chunk>
 	<chunk id="source_base">
 		<combo key="source" text="Source Local Knowledge" values="local knowledge" default="local knowledge" />
 		<combo key="source:ref" text="Source Reference" values="frankthetankk" default="frankthtankk" />
@@ -201,7 +205,7 @@ Note that for a match, at least one positive and no negative is required.
         <check key="tunnel" text="Tunnel" />
         <check key="cutting" text="Cutting" />
         <check key="embankment" text="Embankment" />
-        <combo key="incline" text="Incline" values="up,down,10%,-10%,10°,-10°" default="up" use_last_as_default="force" />
+        <combo key="incline" text="Incline" values="up,down,10%,-10%,10°,-10°" use_last_as_default="force" />
     </chunk>
     <chunk id="highway_yesno_incline_oneway">
         <check key="oneway" text="Oneway" />
@@ -892,6 +896,8 @@ Note that for a match, at least one positive and no negative is required.
 		        <combo key="incline" text="Incline" values="up,down,10%,-10%,10°,-10°" default="up" use_last_as_default="force" />
                 <text key="width" text="Width (meters)" />
                 <check key="toll" text="Toll" />
+				<check key="ford" text="Ford" />
+				<check key="flood_prone" text="Flood prone" />
             </optional>
         </item>
         <item name="Ford" icon="presets/ford.png" type="node,way" preset_name_label="true">
@@ -983,11 +989,11 @@ Note that for a match, at least one positive and no negative is required.
                   ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:highway=bridleway"
                   uk.href="http://wiki.openstreetmap.org/wiki/Uk:Tag:highway=bridleway" />
             <key key="highway" value="bridleway" />
+			<combo key="designation" text="Designation (Public or Permissive)" values="public_bridleway,permissive_bridleway" default="public_bridleway" />
             <optional>
                 <reference ref="name_layer" />
-				<combo key="maxspeed" text="Max. speed (km/h)" values="5 mph,10 mph,15 mph,20 mph,25 mph,30 mph,35 mph,40 mph,45 mph,50 mph,55 mph,60 mph,65 mph,70 mph,75 mph" length="6" use_last_as_default="force" match="key" />
-				<combo key="source:maxspeed" text="source:maxspeed=*" values="sign" default="sign" />
-                <reference ref="surface" />
+				<combo key="surface" text="Surface" values="paved,unpaved,dirt,asphalt,concrete,concrete:plates,compacted,earth,ice,snow,metal,wood,artificial_turf,paving_stones,cobblestone,gravel,pebblestone,compacted,grass_paver,grass,mud,sand,ground,sett,tartan" default="earth" length="6" use_last_as_default="force" />
+				<reference ref="source_name" />
                 <reference ref="highway_yesno_incline_oneway_lit" />
                 <text key="width" text="Width (meters)" />
             </optional>
@@ -1657,6 +1663,7 @@ Note that for a match, at least one positive and no negative is required.
 			<reference ref="surface" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
+			<check key="intermittent" text="A permanent water flow or not" />
         </item>
         <item name="Ditch" icon="presets/waterway.png" type="way" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:waterway=ditch"
@@ -1671,6 +1678,7 @@ Note that for a match, at least one positive and no negative is required.
 			<reference ref="surface" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
+			<check key="intermittent" text="A permanent water flow or not" />
         </item>
         <item name="Stream" icon="presets/waterway.png" type="way" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:waterway=stream"
@@ -1689,6 +1697,7 @@ Note that for a match, at least one positive and no negative is required.
 			<reference ref="surface" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
+			<check key="intermittent" text="A permanent water flow or not" />
         </item>
         <item name="Wadi" icon="presets/waterway.png" type="way" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:waterway=wadi" />
@@ -1699,6 +1708,7 @@ Note that for a match, at least one positive and no negative is required.
 			<reference ref="surface" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
+			<check key="intermittent" text="A permanent water flow or not" />
         </item>
         <item name="Canal" icon="presets/waterway.png" type="way" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:waterway=canal"
@@ -1715,6 +1725,7 @@ Note that for a match, at least one positive and no negative is required.
 			<reference ref="surface" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
+			<check key="intermittent" text="A permanent water flow or not" />
         </item>
         <item name="River" icon="presets/river.png" type="way" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:waterway=river"
@@ -1731,6 +1742,7 @@ Note that for a match, at least one positive and no negative is required.
 			<reference ref="surface" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
+			<check key="intermittent" text="A permanent water flow or not" />
         </item>
         <separator/>
         <item name="Spring" icon="presets/spring.png" type="node,closedway" preset_name_label="true">
@@ -1744,11 +1756,13 @@ Note that for a match, at least one positive and no negative is required.
             <key key="natural" value="spring" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <text key="name" text="Name" />
+			<check key="intermittent" text="A permanent water flow or not" />
         </item>
         <item name="Waterfall" icon="presets/waterfall.png" type="node,way" preset_name_label="true">
             <space />
             <key key="waterway" value="waterfall" />
             <reference ref="name_wikipedia" />
+			<check key="intermittent" text="A permanent water flow or not" />
         </item>
         <item name="Weir" icon="presets/weir.png" type="node,way" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:waterway=weir"
@@ -3354,7 +3368,7 @@ Note that for a match, at least one positive and no negative is required.
             <key key="tourism" value="information" />
             <key key="information" value="board" />
             <text key="name" text="Name" />
-            <combo key="board_type" text="Board Content" values="notice,history,nature,wildlife,plants" />
+            <combo key="board_type" text="Board Content (Node only)" values="notice,history,nature,wildlife,plants" />
             <text key="description" text="Closer Description" />
         </item>
         <item name="Guidepost" icon="presets/guidepost.png" type="node" preset_name_label="true">

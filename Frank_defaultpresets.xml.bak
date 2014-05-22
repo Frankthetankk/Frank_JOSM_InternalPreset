@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
 author="Frankthetankk"
-version="1.27_2014-05-19"
+version="1.30_2014-05-21"
  
 description="My Tags Changes for Internal Presets Defaults"
 shortdescription="My Internal Preset Changes">
@@ -892,6 +892,8 @@ Note that for a match, at least one positive and no negative is required.
 		        <combo key="incline" text="Incline" values="up,down,10%,-10%,10°,-10°" default="up" use_last_as_default="force" />
                 <text key="width" text="Width (meters)" />
                 <check key="toll" text="Toll" />
+				<check key="ford" text="Ford" />
+				<check key="flood_prone" text="Flood prone" />
             </optional>
         </item>
         <item name="Ford" icon="presets/ford.png" type="node,way" preset_name_label="true">
@@ -1657,6 +1659,7 @@ Note that for a match, at least one positive and no negative is required.
 			<reference ref="surface" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
+			<check key="intermittent" text="A permanent water flow or not" />
         </item>
         <item name="Ditch" icon="presets/waterway.png" type="way" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:waterway=ditch"
@@ -1671,6 +1674,7 @@ Note that for a match, at least one positive and no negative is required.
 			<reference ref="surface" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
+			<check key="intermittent" text="A permanent water flow or not" />
         </item>
         <item name="Stream" icon="presets/waterway.png" type="way" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:waterway=stream"
@@ -1689,6 +1693,7 @@ Note that for a match, at least one positive and no negative is required.
 			<reference ref="surface" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
+			<check key="intermittent" text="A permanent water flow or not" />
         </item>
         <item name="Wadi" icon="presets/waterway.png" type="way" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:waterway=wadi" />
@@ -1699,6 +1704,7 @@ Note that for a match, at least one positive and no negative is required.
 			<reference ref="surface" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
+			<check key="intermittent" text="A permanent water flow or not" />
         </item>
         <item name="Canal" icon="presets/waterway.png" type="way" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:waterway=canal"
@@ -1715,6 +1721,7 @@ Note that for a match, at least one positive and no negative is required.
 			<reference ref="surface" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
+			<check key="intermittent" text="A permanent water flow or not" />
         </item>
         <item name="River" icon="presets/river.png" type="way" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:waterway=river"
@@ -1731,6 +1738,7 @@ Note that for a match, at least one positive and no negative is required.
 			<reference ref="surface" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
+			<check key="intermittent" text="A permanent water flow or not" />
         </item>
         <separator/>
         <item name="Spring" icon="presets/spring.png" type="node,closedway" preset_name_label="true">
@@ -1744,11 +1752,13 @@ Note that for a match, at least one positive and no negative is required.
             <key key="natural" value="spring" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <text key="name" text="Name" />
+			<check key="intermittent" text="A permanent water flow or not" />
         </item>
         <item name="Waterfall" icon="presets/waterfall.png" type="node,way" preset_name_label="true">
             <space />
             <key key="waterway" value="waterfall" />
             <reference ref="name_wikipedia" />
+			<check key="intermittent" text="A permanent water flow or not" />
         </item>
         <item name="Weir" icon="presets/weir.png" type="node,way" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:waterway=weir"
@@ -3170,6 +3180,7 @@ Note that for a match, at least one positive and no negative is required.
             <combo key="cuisine" text="Cuisine" values="italian,chinese,pizza,burger,greek,german,indian,regional,kebab,turkish,asian,thai,mexican,japanese,french,sandwich,sushi,fish_and_chips,chicken" />
             <reference ref="oh" />
             <space />
+			<check key="drive_through" text="Drive through" />
             <reference ref="internet_smoking_wheelchair" />
             <space />
             <reference ref="contact" />
@@ -3353,7 +3364,7 @@ Note that for a match, at least one positive and no negative is required.
             <key key="tourism" value="information" />
             <key key="information" value="board" />
             <text key="name" text="Name" />
-            <combo key="board_type" text="Board Content" values="notice,history,nature,wildlife,plants" />
+            <combo key="board_type" text="Board Content (Node only)" values="notice,history,nature,wildlife,plants" />
             <text key="description" text="Closer Description" />
         </item>
         <item name="Guidepost" icon="presets/guidepost.png" type="node" preset_name_label="true">
@@ -4092,7 +4103,8 @@ Note that for a match, at least one positive and no negative is required.
             <space />
             <key key="amenity" value="pharmacy" />
             <text key="name" text="Name" />
-            <combo key="dispensing" text="Dispensing" values="yes,no" default="no" />
+            <check key="dispensing" text="Dispensing (fill/sell prescription drugs)" />
+			<check key="drive_through" text="Drive through" />
             <reference ref="oh" />
             <reference ref="link_contact" />
             <reference ref="link_addresses" />
@@ -5682,6 +5694,7 @@ Note that for a match, at least one positive and no negative is required.
                   ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:shop=alcohol" />
             <space />
             <key key="shop" value="alcohol" />
+			<check key="drive_through" text="Drive through" />
             <reference ref="name_oh" />
             <reference ref="link_contact" />
             <reference ref="link_addresses" />
@@ -5906,6 +5919,7 @@ Note that for a match, at least one positive and no negative is required.
             <key key="amenity" value="bank" />
             <reference ref="name_brand_operator_oh" />
             <check key="atm" text="Automated Teller Machine" default="on" />
+			<check key="drive_through" text="Drive through" />
             <reference ref="link_contact" />
             <reference ref="link_addresses" />
         </item>
@@ -5939,6 +5953,7 @@ Note that for a match, at least one positive and no negative is required.
             <key key="amenity" value="atm" />
             <text key="brand" text="Brand" />
             <text key="operator" text="Operator" />
+			<check key="drive_through" text="Drive through" />
             <reference ref="name_oh" />
             <reference ref="link_contact" />
             <reference ref="link_addresses" />
