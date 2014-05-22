@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
 author="Frankthetankk"
-version="1.33_2014-05-22"
+version="1.34_2014-05-22"
  
 description="My Tags Changes for Internal Presets Defaults"
 shortdescription="My Internal Preset Changes">
@@ -169,14 +169,14 @@ Note that for a match, at least one positive and no negative is required.
     <!-- Item chunks -->
 	<chunk id="smoothness_base">
 		<combo key="smoothness" text="Smoothness" values_searchable="true" >
-			<list_entry value="excellent" display_value="1 Excellent" short_description="(thin_rollers) roller blade, skate board and all below" >
-			<list_entry value="good" display_value="2 Good" short_description="(thin_wheels) racing bike and all below" >
-			<list_entry value="intermediate" display_value="3 Intermediate" short_description="(wheels) city bike, sport cars, wheel chair, Scooter and all below" >
+			<list_entry value="excellent" display_value="1 Excellent" short_description="(thin_rollers) roller blade, skate board and all below" />
+			<list_entry value="good" display_value="2 Good" short_description="(thin_wheels) racing bike and all below" />
+			<list_entry value="intermediate" display_value="3 Intermediate" short_description="(wheels) city bike, sport cars, wheel chair, Scooter and all below" />
 			<list_entry value="bad" display_value="4 Bad" short_description="(robust_wheels) trekking bike, normal cars, Rickshaw and all below" >
-			<list_entry value="very_bad" display_value="5 Very Bad" short_description="(high_clearance) Car with high clearance, light-duty off road vehicles" >
-			<list_entry value="horrible" display_value="6 Horrible" short_description="(off_road_wheels) heavy-duty off road vehicles and all below" >
-			<list_entry value="very_horrible" display_value="7 Very Horrible" short_description="(specialized_off_road_wheels) tractor, ATV, tanks, trial, Mountain bike and all kind of off-highway vehicles (see also mtb:scale=*)" >
-			<list_entry value="impassable" display_value="8 Impassable" short_description="No wheeled vehicle (see also sac_scale=*)" >
+			<list_entry value="very_bad" display_value="5 Very Bad" short_description="(high_clearance) Car with high clearance, light-duty off road vehicles" />
+			<list_entry value="horrible" display_value="6 Horrible" short_description="(off_road_wheels) heavy-duty off road vehicles and all below" />
+			<list_entry value="very_horrible" display_value="7 Very Horrible" short_description="(specialized_off_road_wheels) tractor, ATV, tanks, trial, Mountain bike and all kind of off-highway vehicles (see also mtb:scale=*)" />
+			<list_entry value="impassable" display_value="8 Impassable" short_description="No wheeled vehicle (see also sac_scale=*)" />
 		</combo>
 	</chunk>
 	<chunk id="source_name">

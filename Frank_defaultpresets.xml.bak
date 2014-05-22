@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
 author="Frankthetankk"
-version="1.32_2014-05-22"
+version="1.33_2014-05-22"
  
 description="My Tags Changes for Internal Presets Defaults"
 shortdescription="My Internal Preset Changes">
@@ -1014,10 +1014,12 @@ Note that for a match, at least one positive and no negative is required.
 				<list_entry value="impassable" display_value="8 Impassable" short_description="No wheeled vehicle (see also sac_scale=*)" >
 			</combo>
             <optional>
-                <reference ref="name_layer" />
+				<reference ref="name_ref_operator" />
 				<combo key="surface" text="Surface" values="paved,unpaved,dirt,asphalt,concrete,concrete:plates,compacted,earth,ice,snow,metal,wood,artificial_turf,paving_stones,cobblestone,gravel,pebblestone,compacted,grass_paver,grass,mud,sand,ground,sett,tartan" default="earth" length="6" use_last_as_default="force" />
 				<reference ref="source_name" />
                 <reference ref="highway_yesno_incline_oneway_lit" />
+				<check key="bicycle" text="Bicycle yes/no" value_on="yes" value_off="" default="on" />
+				<check key="foot" text="Foot yes/no" value_on="yes" value_off="" default="on" />
                 <text key="width" text="Width (meters)" />
             </optional>
         </item>
