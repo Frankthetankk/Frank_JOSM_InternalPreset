@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
 author="Frankthetankk"
-version="1.34_2014-05-22"
+version="1.40_2014-05-23"
  
 description="My Tags Changes for Internal Presets Defaults"
 shortdescription="My Internal Preset Changes">
@@ -172,7 +172,7 @@ Note that for a match, at least one positive and no negative is required.
 			<list_entry value="excellent" display_value="1 Excellent" short_description="(thin_rollers) roller blade, skate board and all below" />
 			<list_entry value="good" display_value="2 Good" short_description="(thin_wheels) racing bike and all below" />
 			<list_entry value="intermediate" display_value="3 Intermediate" short_description="(wheels) city bike, sport cars, wheel chair, Scooter and all below" />
-			<list_entry value="bad" display_value="4 Bad" short_description="(robust_wheels) trekking bike, normal cars, Rickshaw and all below" >
+			<list_entry value="bad" display_value="4 Bad" short_description="(robust_wheels) trekking bike, normal cars, Rickshaw and all below" />
 			<list_entry value="very_bad" display_value="5 Very Bad" short_description="(high_clearance) Car with high clearance, light-duty off road vehicles" />
 			<list_entry value="horrible" display_value="6 Horrible" short_description="(off_road_wheels) heavy-duty off road vehicles and all below" />
 			<list_entry value="very_horrible" display_value="7 Very Horrible" short_description="(specialized_off_road_wheels) tractor, ATV, tanks, trial, Mountain bike and all kind of off-highway vehicles (see also mtb:scale=*)" />
@@ -184,9 +184,9 @@ Note that for a match, at least one positive and no negative is required.
 		<combo key="source_ref" text="Source_Reference" value="frankthetankk" default="frankthtankk" use_last_as_default="force" editable="true" />
 	</chunk>
 	<chunk id="source_base">
-		<combo key="source" text="Source Local Knowledge" values="local knowledge" default="local knowledge" />
-		<combo key="source:ref" text="Source Reference" values="frankthetankk" default="frankthtankk" />
-		<combo key="source:date" text="Source Date (current date YYYY-MM-DD)" use_last_as_default="force" />
+		<combo key="source" text="Source Local Knowledge" values="bing;local_knowledge;survery,local knowledge,frankthetankk,local knowledge;frankthetankk" default="bing;local_knowledge;survery" use_last_as_default="force" editable="true" />
+		<combo key="source_ref" text="Source Reference" values="frankthetankk" default="frankthtankk" use_last_as_default="force" editable="true" />
+		<combo key="source_date" text="Source Date (current date YYYY-MM-DD)" editable="true" use_last_as_default="force" />
 	</chunk>
 	<chunk id="source_base_maxspeed">
         <reference ref="source_base" />
@@ -194,10 +194,10 @@ Note that for a match, at least one positive and no negative is required.
 		<combo key="maxspeed:type" text="maxspeed:type=sign" value="sign" default="sign" />
 	</chunk>
     <chunk id="surface">
-        <combo key="surface" text="Surface" values="paved,unpaved,dirt,asphalt,concrete,concrete:plates,compacted,earth,ice,snow,metal,wood,artificial_turf,paving_stones,cobblestone,gravel,pebblestone,compacted,grass_paver,grass,mud,sand,ground,sett,tartan" />
+        <combo key="surface" text="Surface" values="paved,unpaved,dirt,asphalt,concrete,concrete:plates,compacted,earth,ice,snow,metal,wood,artificial_turf,paving_stones,cobblestone,gravel,pebblestone,compacted,grass_paver,grass,mud,sand,ground,sett,tartan" values_searchable="true" use_last_as_default="force" />
     </chunk>
     <chunk id="highway_base">
-        <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3"/>
+        <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" values_searchable="true" length="3"/>
 		<optional text="Lane details">
 			<combo key="lanes" text="Lanes" values="1,2,3,4,5" length="2"/>
 			<combo key="lanes:forward" text="Number of Lanes Forward" values="1,2,3,4,5" default="1" />
@@ -217,7 +217,7 @@ Note that for a match, at least one positive and no negative is required.
         <check key="tunnel" text="Tunnel" />
         <check key="cutting" text="Cutting" />
         <check key="embankment" text="Embankment" />
-        <combo key="incline" text="Incline" values="up,down,10%,-10%,10°,-10°" use_last_as_default="force" />
+        <combo key="incline" text="Incline" values="up,down,10%,-10%,10°,-10°" use_last_as_default="true" />
     </chunk>
     <chunk id="highway_yesno_incline_oneway">
         <check key="oneway" text="Oneway" />
@@ -242,7 +242,7 @@ Note that for a match, at least one positive and no negative is required.
     <chunk id="railway_service_gauge_electrified">
         <reference ref="railway_service" />
         <combo key="tracks" text="Tracks" text_context="railway" values="1,2,3,4" length="4" />
-        <combo key="gauge" text="Gauge (mm)" values="1668,1676,1674,1600,1524,1520,1495,1435,1067,1000,914,762,760,750" length="4" />
+        <combo key="gauge" text="Gauge (mm)" values="1668,1676,1674,1600,1524,1520,1495,1435,1067,1000,914,762,760,750" length="4" values_searchable="true" />
         <reference ref="railway_electrified" />
     </chunk>
     <chunk id="barrier_5">
@@ -289,13 +289,13 @@ Note that for a match, at least one positive and no negative is required.
     </chunk>
     <chunk id="name_layer">
         <text key="name" text="Name" />
-        <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
+        <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" values_searchable="true" />
     </chunk>
     <chunk id="service_times">
         <combo key="service_times" text="Service Times" delimiter="|" values="18:00|sunset,sunrise|Su 09:30,11:00|Sa,Su,PH 09:00|Sa 18:00; Su 10:45|Sa 10:00+" />
     </chunk>
     <chunk id="oh">
-        <combo key="opening_hours" text="Opening Hours" delimiter="|" values="24/7|08:30-12:30,15:30-20:00|Sa-Su 00:00-24:00|Mo-Fr 08:30-20:00; Sa,Su 08:00-15:00; PH off|Mo-Fr 08:30-20:00, Tu-Su 08:00-15:00; Sa 08:00-12:00|Mo-Su 08:00-18:00|sunrise-sunset|Su 10:00+" />
+        <combo key="opening_hours" text="Opening Hours" delimiter="|" values="24/7|08:30-12:30,15:30-20:00|Sa-Su 00:00-24:00|Mo-Fr 08:30-20:00; Sa,Su 08:00-15:00; PH off|Mo-Fr 08:30-20:00, Tu-Su 08:00-15:00; Sa 08:00-12:00|Mo-Su 08:00-18:00|sunrise-sunset|Su 10:00+" values_searchable="true" />
     </chunk>
     <chunk id="name_oh">
         <text key="name" text="Name" />
@@ -318,10 +318,10 @@ Note that for a match, at least one positive and no negative is required.
         <reference ref="oh" />
     </chunk>
     <chunk id="internet_smoking_wheelchair">
-        <combo key="internet_access" text="Internet access" values="yes,wlan,wired,terminal,no" />
-        <combo key="internet_access:fee" text="Internet access fee" values="yes,no" />
-        <combo key="smoking" text="Smoking" default="no" values="yes,dedicated,separated,isolated,no" />
-        <combo key="wheelchair" text="Wheelchairs" default="yes" values="yes,no" />
+        <combo key="internet_access" text="Internet access" values="yes,wlan,wired,terminal,no" values_searchable="true" />
+        <combo key="internet_access:fee" text="Internet access fee" values="yes,no" values_searchable="true" />
+        <combo key="smoking" text="Smoking" default="no" values="yes,dedicated,separated,isolated,no" values_searchable="true" />
+        <combo key="wheelchair" text="Wheelchairs" default="yes" values="yes,no" values_searchable="true" />
     </chunk>
     <chunk id="optional_height">
         <optional>
@@ -367,12 +367,12 @@ Note that for a match, at least one positive and no negative is required.
     </chunk>
     <chunk id="parking_name_type_ref">
         <text key="name" text="Name" />
-        <combo key="parking" text="Type" values="multi-storey,surface,underground,rooftop" />
+        <combo key="parking" text="Type" values="multi-storey,surface,underground,rooftop" values_searchable="true" />
         <text key="ref" text="Reference number" />
     </chunk>
     <chunk id="parking_access_fee_operator_surface">
         <space />
-        <combo key="access" text="Access" values="yes,private,customers,permissive,no" />
+        <combo key="access" text="Access" values="yes,private,customers,permissive,no" values_searchable="true" />
         <combo key="fee" text="Fee" values="yes,no,interval" />
         <text key="operator" text="Operator" />
         <reference ref="surface" />
@@ -382,7 +382,7 @@ Note that for a match, at least one positive and no negative is required.
         <combo key="stay" text="Time Limit (minutes)" values="0,30-60,30-180,30+" />
     </chunk>
     <chunk id="supervised_lit_oh">
-        <combo key="supervised" text="Supervised" values="yes,no,interval" />
+        <combo key="supervised" text="Supervised" values="yes,no,interval" values_searchable="true" />
         <combo key="lit" text="Lit" values="yes,no,interval" />
         <reference ref="oh" />
     </chunk>
@@ -418,6 +418,7 @@ Note that for a match, at least one positive and no negative is required.
 	<preset_link preset_name="Payments" />
   </chunk>
   <!--  Groups -->
+  <separator/>
   <group name="Highways" icon="presets/way_secondary.png">
     <group name="Streets" icon="presets/way_secondary.png">
         <item name="Motorway" icon="presets/motorway.png" type="way" preset_name_label="true">
@@ -1004,14 +1005,14 @@ Note that for a match, at least one positive and no negative is required.
 			<combo key="designation" text="Designation (Public or Permissive)" values="public_bridleway,permissive_bridleway" default="public_bridleway" />
 			<combo key="horse" text="Horse Designated Trail" values="designated" default="designated" />
 			<combo key="smoothness" text="Smoothness" values_searchable="true" default="bad" >
-				<list_entry value="excellent" display_value="1 Excellent" short_description="(thin_rollers) roller blade, skate board and all below" >
-				<list_entry value="good" display_value="2 Good" short_description="(thin_wheels) racing bike and all below" >
-				<list_entry value="intermediate" display_value="3 Intermediate" short_description="(wheels) city bike, sport cars, wheel chair, Scooter and all below" >
-				<list_entry value="bad" display_value="4 Bad" short_description="(robust_wheels) trekking bike, normal cars, Rickshaw and all below" >
-				<list_entry value="very_bad" display_value="5 Very Bad" short_description="(high_clearance) Car with high clearance, light-duty off road vehicles" >
-				<list_entry value="horrible" display_value="6 Horrible" short_description="(off_road_wheels) heavy-duty off road vehicles and all below" >
-				<list_entry value="very_horrible" display_value="7 Very Horrible" short_description="(specialized_off_road_wheels) tractor, ATV, tanks, trial, Mountain bike and all kind of off-highway vehicles (see also mtb:scale=*)" >
-				<list_entry value="impassable" display_value="8 Impassable" short_description="No wheeled vehicle (see also sac_scale=*)" >
+				<list_entry value="excellent" display_value="1 Excellent" short_description="(thin_rollers) roller blade, skate board and all below" />
+				<list_entry value="good" display_value="2 Good" short_description="(thin_wheels) racing bike and all below" />
+				<list_entry value="intermediate" display_value="3 Intermediate" short_description="(wheels) city bike, sport cars, wheel chair, Scooter and all below" />
+				<list_entry value="bad" display_value="4 Bad" short_description="(robust_wheels) trekking bike, normal cars, Rickshaw and all below" />
+				<list_entry value="very_bad" display_value="5 Very Bad" short_description="(high_clearance) Car with high clearance, light-duty off road vehicles" />
+				<list_entry value="horrible" display_value="6 Horrible" short_description="(off_road_wheels) heavy-duty off road vehicles and all below" />
+				<list_entry value="very_horrible" display_value="7 Very Horrible" short_description="(specialized_off_road_wheels) tractor, ATV, tanks, trial, Mountain bike and all kind of off-highway vehicles (see also mtb:scale=*)" />
+				<list_entry value="impassable" display_value="8 Impassable" short_description="No wheeled vehicle (see also sac_scale=*)" />
 			</combo>
             <optional>
 				<reference ref="name_ref_operator" />
@@ -4428,44 +4429,62 @@ Note that for a match, at least one positive and no negative is required.
         <item name="Stadium" icon="presets/stadium.png" type="node,closedway" preset_name_label="true">
             <space />
             <key key="leisure" value="stadium" />
-            <text key="name" text="Name" />
             <optional text="Select sport:">
                 <combo key="sport" text="Sport" values="multi,archery,athletics,american_football,australian_football,baseball,basketball,boules,bowls,canadian_football,canoe,climbing,cricket,cricket_nets,croquet,cycling,dog_racing,equestrian,gaelic_games,golf,gymnastics,hockey,horse_racing,motor,pelota,racquet,rugby_league,rugby_union,shooting,skateboard,skating,skiing,soccer,swimming,table_tennis,tennis" values_context="sport" />
             </optional>
+			<reference ref="name_operator_oh" />
+			<reference ref="source_base" />
+			<reference ref="general_access" />
+			<reference ref="supervised_lit_oh" />
         </item>
         <item name="Sports Centre" icon="presets/sports_centre.png" type="node,closedway" preset_name_label="true">
             <space />
             <key key="leisure" value="sports_centre" />
-            <text key="name" text="Name" />
             <optional text="Select sport:">
                 <combo key="sport" text="Sport" values="multi,archery,athletics,american_football,australian_football,baseball,basketball,boules,bowls,canadian_football,canoe,climbing,cricket,cricket_nets,croquet,cycling,dog_racing,equestrian,gaelic_games,golf,gymnastics,hockey,horse_racing,motor,pelota,racquet,rugby_league,rugby_union,shooting,skateboard,skating,skiing,soccer,swimming,table_tennis,tennis" values_context="sport" />
             </optional>
+			<reference ref="name_operator_oh" />
+			<reference ref="source_base" />
+			<reference ref="general_access" />
+			<reference ref="supervised_lit_oh" />
         </item>
         <item name="Pitch" icon="presets/pitch.png" type="node,closedway" preset_name_label="true">
             <space />
             <key key="leisure" value="pitch" />
-            <text key="name" text="Name" />
             <optional text="Select sport:">
                 <combo key="sport" text="Sport" values="multi,archery,athletics,american_football,australian_football,baseball,basketball,boules,bowls,canadian_football,canoe,climbing,cricket,cricket_nets,croquet,cycling,dog_racing,equestrian,gaelic_games,golf,gymnastics,hockey,horse_racing,motor,pelota,racquet,rugby_league,rugby_union,shooting,skateboard,skating,skiing,soccer,swimming,table_tennis,tennis" values_context="sport" />
             </optional>
+			<reference ref="name_operator_oh" />
+			<reference ref="source_base" />
+			<reference ref="general_access" />
+			<reference ref="supervised_lit_oh" />
         </item>
         <item name="Racetrack" icon="presets/stadium.png" type="node,way,closedway,relation" preset_name_label="true">
             <space />
             <key key="leisure" value="track" />
-            <text key="name" text="Name" />
             <optional text="Select sport:">
                 <combo key="sport" text="Sport" values="multi,archery,athletics,american_football,australian_football,baseball,basketball,boules,bowls,canadian_football,canoe,climbing,cricket,cricket_nets,croquet,cycling,dog_racing,equestrian,gaelic_games,golf,gymnastics,hockey,horse_racing,motor,pelota,racquet,rugby_league,rugby_union,shooting,skateboard,skating,skiing,soccer,swimming,table_tennis,tennis" values_context="sport" />
             </optional>
+			<reference ref="name_operator_oh" />
+			<reference ref="source_base" />
+			<reference ref="general_access" />
+			<reference ref="supervised_lit_oh" />
         </item>
         <item name="Golf Course" icon="presets/golf.png" type="node,closedway" preset_name_label="true">
             <space />
             <key key="leisure" value="golf_course" />
-            <reference ref="name_oh" />
+			<reference ref="name_operator_oh" />
+			<reference ref="source_base" />
+			<reference ref="general_access" />
+			<reference ref="supervised_lit_oh" />
         </item>
         <item name="Miniature Golf" icon="presets/golf.png" type="node,closedway" preset_name_label="true">
             <space />
             <key key="leisure" value="miniature_golf" />
-            <reference ref="name_oh" />
+			<reference ref="name_operator_oh" />
+			<reference ref="source_base" />
+			<reference ref="general_access" />
+			<reference ref="supervised_lit_oh" />
         </item>
     </group> <!-- Sport facilities -->
     <group name="Sport" icon="presets/rowing.png">
@@ -4473,122 +4492,172 @@ Note that for a match, at least one positive and no negative is required.
             <link href="http://wiki.openstreetmap.org/wiki/Tag:sport=multi" />
             <space />
             <key key="sport" value="multi" />
-            <text key="name" text="Name" />
             <combo key="leisure" text="Type" values="pitch,sports_centre,stadium,track" values_context="running" />
+			<reference ref="name_operator_oh" />
+			<reference ref="source_base" />
+			<reference ref="general_access" />
+			<reference ref="supervised_lit_oh" />
         </item>
         <item name="9pin" icon="styles/standard/sport/10pin.png" type="node,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:sport=9pin"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:sport=9pin" />
             <space />
             <key key="sport" value="9pin" />
-            <text key="name" text="Name" />
             <combo key="leisure" text="Type" values="pitch,sports_centre,stadium" />
+			<reference ref="name_operator_oh" />
+			<reference ref="source_base" />
+			<reference ref="general_access" />
+			<reference ref="supervised_lit_oh" />
         </item>
-        <item name="10pin" icon="styles/standard/sport/10pin.png" type="node,closedway" preset_name_label="true">
+        <item name="Bowling (10pin)" icon="styles/standard/sport/10pin.png" type="node,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:sport=10pin" />
             <space />
             <key key="sport" value="10pin" />
-            <text key="name" text="Name" />
             <combo key="leisure" text="Type" values="pitch,sports_centre,stadium" />
+			<reference ref="name_operator_oh" />
+			<reference ref="source_base" />
+			<reference ref="general_access" />
+			<reference ref="supervised_lit_oh" />
         </item>
         <item name="Archery" icon="styles/standard/sport/archery.png" type="node,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:sport=archery"
                   ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:sport=archery" />
             <space />
             <key key="sport" value="archery" />
-            <text key="name" text="Name" />
             <combo key="leisure" text="Type" values="pitch,sports_centre,stadium" />
+			<reference ref="name_operator_oh" />
+			<reference ref="source_base" />
+			<reference ref="general_access" />
+			<reference ref="supervised_lit_oh" />
         </item>
         <item name="Athletics" icon="presets/athletics.png" type="node,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:sports=athletics" />
             <space />
             <key key="sport" value="athletics" />
-            <text key="name" text="Name" />
             <combo key="leisure" text="Type" values="pitch,sports_centre,stadium,track" values_context="running" default="track" />
+			<reference ref="name_operator_oh" />
+			<reference ref="source_base" />
+			<reference ref="general_access" />
+			<reference ref="supervised_lit_oh" />
         </item>
         <item name="Climbing" icon="styles/standard/sport/climbing.png" type="node,way,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:sport=climbing"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:sport=climbing" />
             <space />
             <key key="sport" value="climbing" />
-            <text key="name" text="Name" />
             <combo key="leisure" text="Type" values="sports_centre" />
+			<reference ref="name_operator_oh" />
+			<reference ref="source_base" />
+			<reference ref="general_access" />
+			<reference ref="supervised_lit_oh" />
         </item>
         <item name="Canoeing" icon="presets/canoe.png" type="node,way,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:sport=canoe" />
             <space />
             <key key="sport" value="canoe" />
-            <text key="name" text="Name" />
+			<reference ref="name_operator_oh" />
+			<reference ref="source_base" />
+			<reference ref="general_access" />
+			<reference ref="supervised_lit_oh" />
         </item>
         <item name="Cycling" icon="presets/cycling.png" type="node,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:sport=cycling" />
             <space />
             <key key="sport" value="cycling" />
-            <text key="name" text="Name" />
             <combo key="leisure" text="Type" values="pitch,sports_centre,stadium,track" values_context="racing" />
+			<reference ref="name_operator_oh" />
+			<reference ref="source_base" />
+			<reference ref="general_access" />
+			<reference ref="supervised_lit_oh" />
+
         </item>
         <item name="Dog Racing" icon="styles/standard/leisure/dog.png" type="node,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:sport=dog_racing" />
             <space />
             <key key="sport" value="dog_racing" />
-            <text key="name" text="Name" />
             <combo key="leisure" text="Type" values="pitch,sports_centre,stadium,track" values_context="racing" />
+			<reference ref="name_operator_oh" />
+			<reference ref="source_base" />
+			<reference ref="general_access" />
+			<reference ref="supervised_lit_oh" />
         </item>
         <item name="Equestrian" icon="presets/equestrian.png" type="node,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:sport=equestrian" />
             <space />
             <key key="sport" value="equestrian" />
-            <text key="name" text="Name" />
             <combo key="leisure" text="Type" values="pitch,sports_centre,stadium,track" values_context="riding" />
             <combo key="surface" text="Surface" values="grass,sand,clay,dirt,fine_gravel,ground,mud,unpaved,compacted" />
+			<reference ref="name_operator_oh" />
+			<reference ref="source_base" />
+			<reference ref="general_access" />
+			<reference ref="supervised_lit_oh" />
         </item>
         <item name="Horse Racing" icon="presets/equestrian.png" type="node,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:sport=horse_racing" />
             <space />
             <key key="sport" value="horse_racing" />
-            <text key="name" text="Name" />
             <combo key="leisure" text="Type" values="pitch,sports_centre,stadium,track" values_context="riding" />
             <combo key="surface" text="Surface" values="grass,sand,clay,dirt,fine_gravel,ground,mud,unpaved,compacted" />
+			<reference ref="name_operator_oh" />
+			<reference ref="source_base" />
+			<reference ref="general_access" />
+			<reference ref="supervised_lit_oh" />
         </item>
         <item name="Gymnastics" icon="presets/gymnastics.png" type="node,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:sport=gymnastics" />
             <space />
             <key key="sport" value="gymnastics" />
-            <text key="name" text="Name" />
             <combo key="leisure" text="Type" values="pitch,sports_centre,stadium" />
+			<reference ref="name_operator_oh" />
+			<reference ref="source_base" />
+			<reference ref="general_access" />
+			<reference ref="supervised_lit_oh" />
         </item>
         <item name="Skating" icon="presets/skating.png" type="node,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:sport=skating"
                   uk.href="http://wiki.openstreetmap.org/wiki/Uk:Tag:sport=skating" />
             <space />
             <key key="sport" value="skating" />
-            <text key="name" text="Name" />
             <combo key="leisure" text="Type" values="ice_rink,pitch,sports_centre,stadium" default="ice_rink" />
+			<reference ref="name_operator_oh" />
+			<reference ref="source_base" />
+			<reference ref="general_access" />
+			<reference ref="supervised_lit_oh" />
         </item>
         <item name="Skateboard" icon="styles/standard/sport/skateboard.png" type="node,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:sport=skateboard"
                   uk.href="http://wiki.openstreetmap.org/wiki/Uk:Tag:sport=skateboard" />
             <space />
             <key key="sport" value="skateboard" />
-            <text key="name" text="Name" />
             <combo key="leisure" text="Type" values="pitch,sports_centre,stadium,track" default="pitch" values_context="racing" />
+			<reference ref="name_operator_oh" />
+			<reference ref="source_base" />
+			<reference ref="general_access" />
+			<reference ref="supervised_lit_oh" />
         </item>
         <item name="Swimming" icon="presets/swimming.png" type="node,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:sport=swimming"
                   uk.href="http://wiki.openstreetmap.org/wiki/Uk:Tag:sport=swimming" />
+			<label text="Swimming Pool" />
             <space />
             <key key="sport" value="swimming" />
-            <text key="name" text="Name" />
             <combo key="leisure" text="Type" values="sports_centre,stadium,swimming_pool,water_park" default="swimming_pool" values_searchable="true" />
+			<reference ref="name_operator_oh" />
+			<reference ref="source_base" />
+			<reference ref="general_access" />
+			<reference ref="supervised_lit_oh" />
         </item>
         <item name="Skiing" icon="presets/skiing_downhill.png" type="node,way,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Proposed_features/Piste_Maps" />
             <space />
             <key key="sport" value="skiing" />
-            <text key="name" text="Name" />
             <combo key="piste:type" text="Piste type" values="downhill,nordic,skitour,snow_park" />
             <combo key="piste:difficulty" text="Difficulty" values="novice,easy,intermediate,advanced,expert,freeride" values_context="piste:difficulty" values_searchable="true" />
             <combo key="piste:grooming" text="Grooming" values="classic,mogul,skating,classic;skating,scooter,backcountry" values_context="piste:grooming" />
+			<reference ref="name_operator_oh" />
+			<reference ref="source_base" />
+			<reference ref="general_access" />
+			<reference ref="supervised_lit_oh" />
         </item>
         <item name="Shooting" icon="presets/range.png" type="node,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:sport=shooting"
@@ -4598,8 +4667,11 @@ Note that for a match, at least one positive and no negative is required.
                   uk.href="http://wiki.openstreetmap.org/wiki/Uk:Tag:sport=shooting" />
             <space />
             <key key="sport" value="shooting" />
-            <text key="name" text="Name" />
             <combo key="leisure" text="Type" values="pitch,sports_centre,stadium" />
+			<reference ref="name_operator_oh" />
+			<reference ref="source_base" />
+			<reference ref="general_access" />
+			<reference ref="supervised_lit_oh" />
         </item>
     </group> <!-- Sport -->
     <group name="Sport (Ball)" icon="presets/soccer.png">
@@ -7497,4 +7569,5 @@ Note that for a match, at least one positive and no negative is required.
             </roles>
         </item>
     </group> <!-- Relations -->
+	<separator/>
 </presets>
