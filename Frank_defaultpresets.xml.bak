@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
 author="Frankthetankk"
-version="1.39_2014-05-23"
+version="1.50_2014-06-19"
  
 description="My Tags Changes for Internal Presets Defaults"
 shortdescription="My Internal Preset Changes">
@@ -123,6 +123,7 @@ check: checkbox
   default: ticked on/off (default is "off")
   value_on: the value to set when checked (default is "yes")
   value_off: the value to set when unchecked (default is "no")
+  disable_off: whether the off value is disabled in the dialog, i.e., only unset or yes are provided 
   match: none/key/key!/keyvalue (default is "none", see below for more information)
 
 role: type to specify possible roles in relations
@@ -184,8 +185,8 @@ Note that for a match, at least one positive and no negative is required.
 		<combo key="source_ref" text="Source_Reference" value="frankthetankk" default="frankthtankk" use_last_as_default="force" editable="true" />
 	</chunk>
 	<chunk id="source_base">
-		<combo key="source" text="Source Local Knowledge" values="local knowledge,frankthetankk,local knowledge;frankthetankk" default="local knowledge" />
-		<combo key="source_ref" text="Source Reference" values="frankthetankk" default="frankthtankk" />
+		<combo key="source" text="Source Local Knowledge" values="bing;local_knowledge;survery,local knowledge,frankthetankk,local knowledge;frankthetankk" default="bing;local_knowledge;survery" use_last_as_default="force" editable="true" />
+		<combo key="source_ref" text="Source Reference" values="frankthetankk" default="frankthtankk" use_last_as_default="force" editable="true" />
 		<combo key="source_date" text="Source Date (current date YYYY-MM-DD)" editable="true" use_last_as_default="force" />
 	</chunk>
 	<chunk id="source_base_maxspeed">
@@ -194,7 +195,7 @@ Note that for a match, at least one positive and no negative is required.
 		<combo key="maxspeed:type" text="maxspeed:type=sign" value="sign" default="sign" />
 	</chunk>
     <chunk id="surface">
-        <combo key="surface" text="Surface" values="paved,unpaved,dirt,asphalt,concrete,concrete:plates,compacted,earth,ice,snow,metal,wood,artificial_turf,paving_stones,cobblestone,gravel,pebblestone,compacted,grass_paver,grass,mud,sand,ground,sett,tartan" values_searchable="true" />
+        <combo key="surface" text="Surface" values="paved,unpaved,dirt,asphalt,concrete,concrete:plates,compacted,earth,ice,snow,metal,wood,artificial_turf,paving_stones,cobblestone,gravel,pebblestone,compacted,grass_paver,grass,mud,sand,ground,sett,tartan" values_searchable="true" use_last_as_default="force" />
     </chunk>
     <chunk id="highway_base">
         <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" values_searchable="true" length="3"/>
@@ -213,10 +214,10 @@ Note that for a match, at least one positive and no negative is required.
         <reference ref="source_base_maxspeed" />
     </chunk>
     <chunk id="highway_yesno_incline">
-        <check key="bridge" text="Bridge" />
-        <check key="tunnel" text="Tunnel" />
-        <check key="cutting" text="Cutting" />
-        <check key="embankment" text="Embankment" />
+        <check key="bridge" text="Bridge" disable_off="true" />
+        <check key="tunnel" text="Tunnel" disable_off="true" />
+        <check key="cutting" text="Cutting" disable_off="true" />
+        <check key="embankment" text="Embankment" disable_off="true" />
         <combo key="incline" text="Incline" values="up,down,10%,-10%,10°,-10°" use_last_as_default="true" />
     </chunk>
     <chunk id="highway_yesno_incline_oneway">
@@ -247,8 +248,8 @@ Note that for a match, at least one positive and no negative is required.
     </chunk>
     <chunk id="barrier_5">
         <optional text="Allowed traffic:">
-            <check key="foot" text="Foot" default="on"/>
-            <check key="bicycle" text="Bicycle" default="on"/>
+            <check key="foot" text="Foot" />
+            <check key="bicycle" text="Bicycle" />
             <check key="horse" text="Horse" />
             <check key="motorcycle" text="Motorcycle" />
             <check key="motorcar" text="Motorcar" />
@@ -256,16 +257,16 @@ Note that for a match, at least one positive and no negative is required.
     </chunk>
     <chunk id="barrier_4">
         <optional text="Allowed traffic:">
-            <check key="foot" text="Foot" default="on"/>
-            <check key="bicycle" text="Bicycle" default="on"/>
+            <check key="foot" text="Foot" />
+            <check key="bicycle" text="Bicycle" />
             <check key="horse" text="Horse" />
             <check key="motorcycle" text="Motorcycle" />
         </optional>
     </chunk>
     <chunk id="barrier_2">
         <optional text="Allowed traffic:">
-            <check key="foot" text="Foot" default="on"/>
-            <check key="bicycle" text="Bicycle" default="on"/>
+            <check key="foot" text="Foot" />
+            <check key="bicycle" text="Bicycle" />
         </optional>
     </chunk>
     <chunk id="contact">
@@ -295,7 +296,7 @@ Note that for a match, at least one positive and no negative is required.
         <combo key="service_times" text="Service Times" delimiter="|" values="18:00|sunset,sunrise|Su 09:30,11:00|Sa,Su,PH 09:00|Sa 18:00; Su 10:45|Sa 10:00+" />
     </chunk>
     <chunk id="oh">
-        <combo key="opening_hours" text="Opening Hours" delimiter="|" values="24/7|08:30-12:30,15:30-20:00|Sa-Su 00:00-24:00|Mo-Fr 08:30-20:00; Sa,Su 08:00-15:00; PH off|Mo-Fr 08:30-20:00, Tu-Su 08:00-15:00; Sa 08:00-12:00|Mo-Su 08:00-18:00|sunrise-sunset|Su 10:00+" values_searchable="true" />
+        <combo key="opening_hours" text="Opening Hours" delimiter="|" values="24/7|Mo-Fr 07:00-20:00|Sa-Su 08:00-24:00|Mo-Fr 08:30-20:00; Sa,Su 08:00-15:00|Mo-Fr 08:30-20:00; Sa 08:00-12:00|Mo-Su 08:00-18:00|sunrise-sunset" values_searchable="true" editable="true" match="key" />
     </chunk>
     <chunk id="name_oh">
         <text key="name" text="Name" />
@@ -440,13 +441,14 @@ Note that for a match, at least one positive and no negative is required.
                 <reference ref="highway_base" />
                 <checkgroup columns="4">
                     <check key="oneway" text="Oneway" default="on" />
-                    <check key="bridge" text="Bridge" />
-                    <check key="tunnel" text="Tunnel" />
-                    <check key="cutting" text="Cutting" />
-                    <check key="embankment" text="Embankment" />
+                    <check key="bridge" text="Bridge" disable_off="true" />
+                    <check key="tunnel" text="Tunnel" disable_off="true" />
+                    <check key="cutting" text="Cutting" disable_off="true" />
+                    <check key="embankment" text="Embankment" disable_off="true" />
                     <check key="lit" text="Lit" />
                     <check key="toll" text="Toll" />
                 </checkgroup>
+				<reference ref="source_base" />
             </optional>
         </item>
         <item name="Motorway Link" icon="presets/motorway.png" type="way" preset_name_label="true">
@@ -464,13 +466,14 @@ Note that for a match, at least one positive and no negative is required.
                 <reference ref="highway_base" />
                 <checkgroup columns="4">
                     <check key="oneway" text="Oneway" default="on" />
-                    <check key="bridge" text="Bridge" />
-                    <check key="tunnel" text="Tunnel" />
-                    <check key="cutting" text="Cutting" />
-                    <check key="embankment" text="Embankment" />
+                    <check key="bridge" text="Bridge" disable_off="true" />
+                    <check key="tunnel" text="Tunnel" disable_off="true" />
+                    <check key="cutting" text="Cutting" disable_off="true" />
+                    <check key="embankment" text="Embankment" disable_off="true" />
                     <check key="lit" text="Lit" />
                     <check key="toll" text="Toll" />
                 </checkgroup>
+				<reference ref="source_base" />
             </optional>
         </item>
         <item name="Trunk" icon="presets/trunk.png" type="way" preset_name_label="true">
@@ -492,13 +495,14 @@ Note that for a match, at least one positive and no negative is required.
                 <checkgroup columns="4">
                     <check key="oneway" text="Oneway" default="on" />
                     <check key="motorroad" text="Motorroad" default="on" />
-                    <check key="bridge" text="Bridge" />
-                    <check key="tunnel" text="Tunnel" />
-                    <check key="cutting" text="Cutting" />
-                    <check key="embankment" text="Embankment" />
+                    <check key="bridge" text="Bridge" disable_off="true" />
+                    <check key="tunnel" text="Tunnel" disable_off="true" />
+                    <check key="cutting" text="Cutting" disable_off="true" />
+                    <check key="embankment" text="Embankment" disable_off="true" />
                     <check key="lit" text="Lit" />
                     <check key="toll" text="Toll" />
                 </checkgroup>
+				<reference ref="source_base" />
             </optional>
         </item>
         <item name="Trunk Link" icon="presets/trunk.png" type="way" preset_name_label="true">
@@ -517,13 +521,14 @@ Note that for a match, at least one positive and no negative is required.
                 <checkgroup columns="4">
                     <check key="oneway" text="Oneway" default="on" />
                     <check key="motorroad" text="Motorroad" default="on" />
-                    <check key="bridge" text="Bridge" />
-                    <check key="tunnel" text="Tunnel" />
-                    <check key="cutting" text="Cutting" />
-                    <check key="embankment" text="Embankment" />
+                    <check key="bridge" text="Bridge" disable_off="true" />
+                    <check key="tunnel" text="Tunnel" disable_off="true" />
+                    <check key="cutting" text="Cutting" disable_off="true" />
+                    <check key="embankment" text="Embankment" disable_off="true" />
                     <check key="lit" text="Lit" />
                     <check key="toll" text="Toll" />
                 </checkgroup>
+				<reference ref="source_base" />
             </optional>
         </item>
         <separator/>
@@ -545,6 +550,7 @@ Note that for a match, at least one positive and no negative is required.
                 <reference ref="highway_base" />
                 <check key="motorroad" text="Motorroad" />
                 <reference ref="highway_yesno_incline_oneway_lit" />
+				<reference ref="source_base" />
             </optional>
         </item>
         <item name="Primary Link" icon="presets/way_primary.png" type="way" preset_name_label="true">
@@ -560,6 +566,7 @@ Note that for a match, at least one positive and no negative is required.
                 <reference ref="highway_base" />
                 <check key="motorroad" text="Motorroad" />
                 <reference ref="highway_yesno_incline_oneway_lit" />
+				<reference ref="source_base" />
             </optional>
         </item>
         <item name="Secondary" icon="presets/way_secondary.png" type="way" preset_name_label="true">
@@ -580,6 +587,7 @@ Note that for a match, at least one positive and no negative is required.
                 <text key="name" text="Name" />
                 <reference ref="highway_base" />
                 <reference ref="highway_yesno_incline_oneway_lit" />
+				<reference ref="source_base" />
             </optional>
         </item>
         <item name="Secondary Link" icon="presets/way_secondary.png" type="way" preset_name_label="true">
@@ -594,6 +602,7 @@ Note that for a match, at least one positive and no negative is required.
             <optional>
                 <reference ref="highway_base" />
                 <reference ref="highway_yesno_incline_oneway_lit" />
+				<reference ref="source_base" />
             </optional>
         </item>
         <item name="Tertiary" icon="presets/way_tertiary.png" type="way" preset_name_label="true">
@@ -615,6 +624,7 @@ Note that for a match, at least one positive and no negative is required.
                 <text key="name" text="Name" />
                 <reference ref="highway_base" />
                 <reference ref="highway_yesno_incline_oneway_lit" />
+				<reference ref="source_base" />
             </optional>
         </item>
         <item name="Tertiary Link" icon="presets/way_tertiary.png" type="way" preset_name_label="true">
@@ -629,6 +639,7 @@ Note that for a match, at least one positive and no negative is required.
             <optional>
                 <reference ref="highway_base" />
                 <reference ref="highway_yesno_incline_oneway_lit" />
+				<reference ref="source_base" />
             </optional>
         </item>
         <item name="Unclassified" icon="presets/way_unclassified.png" type="way,closedway" preset_name_label="true">
@@ -649,6 +660,7 @@ Note that for a match, at least one positive and no negative is required.
                 <reference ref="highway_yesno_incline_oneway_lit" />
                 <check key="passing_places" text="Passing Places" />
                 <text key="width" text="Width (meters)" />
+				<reference ref="source_base" />
             </optional>
         </item>
         <item name="Residential" icon="presets/residential.png" type="way,closedway" preset_name_label="true">
@@ -670,6 +682,7 @@ Note that for a match, at least one positive and no negative is required.
                 <reference ref="highway_base" />
                 <reference ref="highway_yesno_incline_oneway_lit" />
                 <text key="width" text="Width (meters)" />
+				<reference ref="source_base" />
             </optional>
         </item>
         <item name="Bicycle Road" icon="presets/bicycle_road.svg" type="way" preset_name_label="true">
@@ -695,6 +708,7 @@ Note that for a match, at least one positive and no negative is required.
                 <reference ref="highway_yesno_incline" />
                 <check key="lit" text="Lit" />
                 <text key="width" text="Width (meters)" />
+				<reference ref="source_base" />
             </optional>
         </item>
         <item name="Living Street" icon="presets/living_street.png" type="way,closedway" preset_name_label="true">
@@ -717,6 +731,7 @@ Note that for a match, at least one positive and no negative is required.
                 <reference ref="surface" />
                 <reference ref="highway_yesno_incline_oneway_lit" />
                 <text key="width" text="Width (meters)" />
+				<reference ref="source_base" />
             </optional>
         </item>
         <item name="Pedestrian" icon="presets/pedestrian.png" type="way,closedway,relation" preset_name_label="true">
@@ -743,6 +758,7 @@ Note that for a match, at least one positive and no negative is required.
                 <reference ref="highway_yesno_incline" />
                 <check key="lit" text="Lit" />
                 <text key="width" text="Width (meters)" />
+				<reference ref="source_base" />
             </optional>
         </item>
         <item name="Service" icon="presets/way_unclassified.png" type="way,closedway" preset_name_label="true">
@@ -756,13 +772,14 @@ Note that for a match, at least one positive and no negative is required.
                   uk.href="http://wiki.openstreetmap.org/wiki/Uk:Tag:highway=service" />
             <space />
             <key key="highway" value="service" />
-            <combo key="service" text="Service way type" values="alley,driveway,parking_aisle,drive-through" />
+            <combo key="service" text="Service way type" values="alley,driveway,parking_aisle,drive-through,emergency_access" />
             <optional>
                 <text key="name" text="Name" />
                 <reference ref="highway_base" />
                 <reference ref="highway_yesno_incline_oneway_lit" />
                 <check key="passing_places" text="Passing Places" />
                 <text key="width" text="Width (meters)" />
+				<reference ref="source_base" />
             </optional>
         </item>
         <item name="Parking Aisle" icon="presets/way_unclassified.png" type="way,closedway" preset_name_label="true">
@@ -780,6 +797,7 @@ Note that for a match, at least one positive and no negative is required.
                 <reference ref="surface" />
                 <check key="oneway" text="Oneway" />
                 <check key="lit" text="Lit" />
+				<reference ref="source_base" />
             </optional>
         </item>
         <item name="Road (Unknown Type)" icon="presets/way_unclassified.png" type="way,closedway" preset_name_label="true">
@@ -796,6 +814,7 @@ Note that for a match, at least one positive and no negative is required.
                 <text key="name" text="Name" />
                 <reference ref="highway_base" />
                 <reference ref="highway_yesno_incline_oneway_lit_width" />
+				<reference ref="source_base" />
             </optional>
         </item>
         <item name="Construction" icon="presets/construction.png" type="way,closedway" preset_name_label="true">
@@ -813,6 +832,7 @@ Note that for a match, at least one positive and no negative is required.
                 <reference ref="highway_yesno_incline_oneway_lit" />
                 <combo key="junction" text="Junction" values="roundabout,jughandle,yes" />
                 <text key="width" text="Width (meters)" />
+				<reference ref="source_base" />
             </optional>
         </item>
         <separator/>
@@ -1019,8 +1039,10 @@ Note that for a match, at least one positive and no negative is required.
 				<combo key="surface" text="Surface" values="paved,unpaved,dirt,asphalt,concrete,concrete:plates,compacted,earth,ice,snow,metal,wood,artificial_turf,paving_stones,cobblestone,gravel,pebblestone,compacted,grass_paver,grass,mud,sand,ground,sett,tartan" default="earth" length="6" use_last_as_default="force" />
 				<reference ref="source_name" />
                 <reference ref="highway_yesno_incline_oneway_lit" />
-				<check key="bicycle" text="Bicycle yes/no" value_on="yes" value_off="" default="on" />
-				<check key="foot" text="Foot yes/no" value_on="yes" value_off="" default="on" />
+				<check key="bicycle" text="Bicycle yes/no" value_on="yes" value_off="" />
+				<check key="foot" text="Foot yes/no" value_on="yes" value_off="" />
+				<check key="motorcar" text="Motorcar yes/no" value_on="yes" value_off="" />
+				<check key="motor_vehicle" text="Motor Vehicle yes/no" value_on="yes" value_off="" />
                 <text key="width" text="Width (meters)" />
             </optional>
         </item>
@@ -2505,6 +2527,7 @@ Note that for a match, at least one positive and no negative is required.
         <item name="Repair" icon="presets/car_repair.png" type="node,closedway" preset_name_label="true">
             <space />
             <key key="shop" value="car_repair" />
+			<combo key="service" text="Type of Service Available" values="oil,tyre,parts,electrical,dealer,repair" match="key" editable="true" />
             <reference ref="name_brand_operator_oh" />
             <reference ref="link_contact" />
             <reference ref="link_addresses" />
@@ -2524,6 +2547,7 @@ Note that for a match, at least one positive and no negative is required.
         <item name="Tyres (Tires)" icon="presets/tyres.png" type="node,closedway" preset_name_label="true">
             <space />
             <key key="shop" value="tyres" />
+			<check key="repair" text="Repair Yes/No" disable_off="true" />
             <reference ref="name_brand_operator_oh" />
             <reference ref="link_contact" />
             <reference ref="link_addresses" />
@@ -2678,7 +2702,7 @@ Note that for a match, at least one positive and no negative is required.
                 <combo key="colour" text="Color (HTML name or hexadecimal code)" values_context="color" values="black,brown,green,red,blue,gray,white,#CD853F" />
             </optional>
             <roles>
-                <role key="" text="route segment" requisite="required" type="way" />
+                <role key="" text="route segment" requisite="required" type="way" member_expression="highway OR railway OR waterway OR aerialway" />
                 <role key="stop" text="stop position" requisite="optional" type="node" member_expression="public_transport=stop_position" />
                 <role key="stop_exit_only" text="stop position (exit only)" requisite="optional" type="node" member_expression="public_transport=stop_position" />
                 <role key="stop_entry_only" text="stop position (entry only)" requisite="optional" type="node" member_expression="public_transport=stop_position" />
@@ -2787,8 +2811,8 @@ Note that for a match, at least one positive and no negative is required.
             <space />
             <key key="public_transport" value="station" />
             <text key="name" text="Name" />
-            <check key="area" text="Area" />
-            <check key="building" text="Building" />
+            <check key="area" text="Area" disable_off="true" />
+            <check key="building" text="Building" disable_off="true" />
             <text key="operator" text="Operator" />
             <text key="network" text="Network" />
         </item>
@@ -3176,6 +3200,10 @@ Note that for a match, at least one positive and no negative is required.
             <reference ref="contact" />
         </item>
     </group> <!-- Accomodation -->
+	<group name="Animal Keeping" icon="presets/cow.png">
+		<item name="" > 
+		</item>
+    </group> <!-- Animal Keeping -->
     <group name="Food+Drinks" icon="presets/restaurant.png">
         <item name="Restaurant" icon="presets/restaurant.png" type="node,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:amenity=restaurant"
@@ -3188,15 +3216,17 @@ Note that for a match, at least one positive and no negative is required.
             <space />
             <key key="amenity" value="restaurant" />
             <reference ref="name_operator" />
-            <multiselect key="cuisine" text="Cuisine" values="italian;chinese;pizza;burger;greek;german;indian;regional;kebab;turkish;asian;thai;mexican;japanese;french;sandwich;sushi" values_searchable="true" />
+            <combo key="cuisine" text="Cuisine" values="american,italian;chinese;pizza;burger;greek;german;indian;regional;kebab;turkish;asian;thai;mexican;japanese;french;sandwich;sushi" values_searchable="true" />
             <check key="microbrewery" text="Microbrewery" />
 			<check key="delivery" text="Delivery" />
+			<check key="takeaway" text="Take out(takeaway)" />
             <reference ref="oh" />
             <combo key="stars" text="Stars" values="1,2,3,4,5,6,7" />
             <space />
             <reference ref="internet_smoking_wheelchair" />
             <space />
             <reference ref="contact" />
+			<reference ref="source_base" />
         </item>
         <item name="Fast Food" icon="presets/fastfood.png" type="node,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:amenity=fast_food"
@@ -3214,6 +3244,7 @@ Note that for a match, at least one positive and no negative is required.
             <reference ref="internet_smoking_wheelchair" />
             <space />
             <reference ref="contact" />
+			<reference ref="source_base" />
         </item>
         <item name="Food Court" icon="presets/fastfood.png" type="node,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:amenity=food_court"
@@ -4211,17 +4242,25 @@ Note that for a match, at least one positive and no negative is required.
                   pt_BR.href="http://wiki.openstreetmap.org/wiki/Pt-br:Tag:amenity=toilets"
                   ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:amenity=toilets"
                   zh_TW.href="http://wiki.openstreetmap.org/wiki/Zh-hant:Tag:amenity=toilets" />
+			<label text="Toilets" />
             <space />
             <key key="amenity" value="toilets" />
-            <combo key="access" text="Access rights" values="public,permissive,customers" />
+            <combo key="access" text="Access rights" values="public,permissive,customers" default="public" />
             <combo key="drinking_water" text="Drinking Water" values="yes,no,seasonal" />
-            <combo key="toilets:disposal" text="Type" values="flush,pitlatrine,chemical,bucket" />
+            <combo key="toilets:disposal" text="Type" values="flush,pitlatrine,chemical,bucket" default="flush" />
             <optional>
-                <text key="description" text="Description" />
-                <combo key="fee" text="Fee" values="yes,no" />
+                <text key="description" text="Description if needed" />
+                <combo key="fee" text="Fee (yes/no)" values="yes,no" />
                 <text key="operator" text="Operator" />
                 <combo key="toilets:position" text="Usage Position" values="seated,seated;urinal,squat,urinal" />
-                <combo key="wheelchair" text="Wheelchair" values="no,limited,yes" />
+                <combo key="wheelchair" text="Wheelchair (yes/no)" values="no,limited,yes" />
+				<check key="male" text="Male only (yes/no)" />
+				<check key="female" text="Female only (yes/no)" />
+				<check key="toilets:paper_supplied" text="Toilet/Hand paper (yes/no)" />
+				<check key="toilets:changing_table" text="Infant Changing Table (yes/no)" />
+				<check key="toilets:handwashing" text="Handwash Available (yes/no)" />
+				<check key="access" text="Access with a Key only (leave blank if none)" default_on="key" disable_off="true" />
+				<combo key="toilets:access" text="Toilets Access (eg.key)" values="customers,public,permissive,ask for key" />
             </optional>
         </item>
         <item name="Post Box" icon="styles/standard/service/post_box.png" type="node" preset_name_label="true">
@@ -4319,13 +4358,33 @@ Note that for a match, at least one positive and no negative is required.
                   sv.href="http://wiki.openstreetmap.org/wiki/Sv:Tag:amenity=recycling" />
             <space />
             <key key="amenity" value="recycling" />
-            <check key="recycling:batteries" text="Batteries" />
-            <check key="recycling:cans" text="Cans" />
-            <check key="recycling:clothes" text="Clothes" />
-            <check key="recycling:glass" text="Glass" />
-            <check key="recycling:paper" text="Paper" />
-            <check key="recycling:scrap_metal" text="Scrap Metal" />
-            <combo key="recycling_type" text="Type" values="container,centre" />
+			<combo key="recycling_type" text="Type" values="container,centre" />
+            <reference ref="name_oh" />
+            <reference ref="link_contact" />
+            <reference ref="link_addresses" />
+			<optional>
+				<checkgroup columns="2">
+					<check key="recycling:cans" text="Cans" />
+					<check key="recycling:aluminium" text="Aluminium" />
+					<check key="recycling:plastic_bottles" text="Plastic Bottles" />
+					<check key="recycling:glass" text="Glass" />
+					<check key="recycling:glass_bottles" text="Glass Bottles" />
+					<check key="recycling:cartons" text="Paper Food/Drink Cartons" />
+					<check key="recycling:paper" text="Paper" />
+					<check key="recycling:plastic_bags" text="Plastic_Bags" />
+					<check key="recycling:plastic" text="Large/Hard Plastic" />
+					<check key="recycling:animal_waste" text="Animal Waste/Poop" />
+					<check key="recycling:batteries" text="Batteries" />
+					<check key="recycling:car_batteries" text="Car Batteries" />
+					<check key="recycling:engine_oil" text="Engine Oil" />
+					<check key="recycling:books" text="Books" />
+					<check key="recycling:engine_oil" text="Engine Oil" />
+					<check key="recycling:mobile_phones" text="Mobile Phones" />
+					<check key="recycling:clothes" text="Clothes" />
+					<check key="recycling:scrap_metal" text="Scrap Metal" />
+					<check key="recycling:metal" text="Metal" />
+				</checkgroup>
+			</optional>
         </item>
         <item name="Waste Basket" icon="styles/standard/service/recycling/trash-bin.png" type="node" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:amenity=waste_basket"
@@ -4413,7 +4472,8 @@ Note that for a match, at least one positive and no negative is required.
             <space />
             <key key="emergency" value="fire_hydrant" />
             <combo key="fire_hydrant:type" text="Type" values="underground,pillar,wall,pond" values_context="pipeline" default="pillar" />
-            <combo key="fire_hydrant:diameter" text="Diameter (in mm)" values="50,80,100,150,200,250,300,400" />
+            <combo key="fire_hydrant:diameter" text="Diameter, water main feeding the hydrant (in mm)" values="50,80,100,150,200,250,300,400" />
+            <combo key="colour" text="Color (HTML name or hexadecimal code)" values_context="color" values="black,brown,green,red,blue,gray,white,#CD853F" use_last_as_default="force" />
             <space />
             <reference ref="name_ref" />
             <text key="operator" text="Operator" />
@@ -4421,6 +4481,7 @@ Note that for a match, at least one positive and no negative is required.
             <combo key="fire_hydrant:position" text="Hydrant Position" values="lane,parking_lot,sidewalk,green" values_context="hydrant position" />
             <combo key="fire_hydrant:pressure" text="Pressure (in bar)" values="5,6,8,suction" />
             <text key="fire_hydrant:count" text="Count" />
+			<check key="in_service" text="In Service" />
         </item>
     </group> <!-- Facilities -->
   </group>  <!-- Facilities -->
@@ -4455,7 +4516,6 @@ Note that for a match, at least one positive and no negative is required.
                 <combo key="sport" text="Sport" values="multi,archery,athletics,american_football,australian_football,baseball,basketball,boules,bowls,canadian_football,canoe,climbing,cricket,cricket_nets,croquet,cycling,dog_racing,equestrian,gaelic_games,golf,gymnastics,hockey,horse_racing,motor,pelota,racquet,rugby_league,rugby_union,shooting,skateboard,skating,skiing,soccer,swimming,table_tennis,tennis" values_context="sport" />
             </optional>
 			<reference ref="name_operator_oh" />
-			<reference ref="source_base" />
 			<reference ref="general_access" />
 			<reference ref="supervised_lit_oh" />
         </item>
@@ -6820,7 +6880,12 @@ Note that for a match, at least one positive and no negative is required.
             <text key="operator" text="Operator" />
         </item>
         <item name="Plant Nursery" icon="styles/standard/misc/landmark/plant.png" type="closedway" preset_name_label="true">
-            <link href="http://wiki.openstreetmap.org/wiki/Tag:landuse=plant_nursery" />
+            <link href="http://wiki.openstreetmap.org/wiki/Tag:landuse=plant_nursery"
+				  de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:landuse=plant_nursery"
+				  fr.href="http://wiki.openstreetmap.org/wiki/FR:Tag:landuse=plant_nursery"
+				  ja.href="http://wiki.openstreetmap.org/wiki/JA:Tag:landuse=plant_nursery"
+				  pl.href="http://wiki.openstreetmap.org/wiki/Pl:Tag:landuse=plant_nursery"
+				  ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:landuse=plant_nursery" />
             <space />
             <key key="landuse" value="plant_nursery" />
             <text key="name" text="Name" />
@@ -7089,18 +7154,18 @@ Note that for a match, at least one positive and no negative is required.
             <text key="addr:housenumber" text="House number" match="key" auto_increment="-2,-1,+1,+2" />
             <optional>
                 <text key="addr:street" text="Street name" use_last_as_default="force" match="key" alternative_autocomplete_keys="name" />
-                <text key="addr:city" text="City name" use_last_as_default="force" match="key" />
-				<text key="addr:state" text="State" default="CA" match="key" use_last_as_default="force" />
-                <text key="addr:postcode" text="Post code" use_last_as_default="force" match="key" />
+                <text key="addr:city" text="City name" use_last_as_default="force" match="key" alternative_autocomplete_keys="name" />
+				<text key="addr:state" text="State" default="CA" use_last_as_default="force" match="key" alternative_autocomplete_keys="name" />
+                <text key="addr:postcode" text="Post code" use_last_as_default="force" match="key" alternative_autocomplete_keys="name" />
                 <combo key="addr:country" text="Country code" values_from="java.util.Locale#getISOCountries" default="US" use_last_as_default="force" match="key" />
-				<text key="addr:unit" text="Unit Address" match="key" alternative_autocomplete_keys="name" />
 				<space />
-				<text key="addr:door" text="Door Name" match="key" alternative_autocomplete_keys="name" />
+				<text key="addr:unit" text="Unit Address" match="key" />
+				<text key="addr:door" text="Door Name" match="key" />
 				<text key="addr:housename" text="House name" match="key" alternative_autocomplete_keys="name" />
-				<text key="addr:full" text="Full Address (rarely used)" match="key" alternative_autocomplete_keys="name" />
+				<text key="addr:full" text="Full Address (rarely used)" match="key" />
 				<space />
-				<text key="addr:floor" text="Floor (level) Address" values="1,2,3,4" use_last_as_default="force" match="key" alternative_autocomplete_keys="name" values_searchable="true"/>
-				<text key="level" text="Building Level" values="1,2,3,4" use_last_as_default="force" match="key" alternative_autocomplete_keys="name" values_searchable="true"/>
+				<text key="addr:floor" text="Floor (level) Address" values="1,2,3,4" use_last_as_default="true" match="key" />
+				<text key="level" text="Building Level" values="1,2,3,4" use_last_as_default="true" match="key" />
             </optional>
         </item>
         <item name="Address Interpolation" icon="presets/interpolation.png" type="way" preset_name_label="true">
@@ -7501,7 +7566,7 @@ Note that for a match, at least one positive and no negative is required.
             <text key="destination" text="Destination written on sign (w/o distance)" />
             <text key="distance" text="Distance (km)" />
             <text key="time" text="Time (hh:mm, for trekking)" />
-            <text key="colour:back" text="Colour of background" />
+            <text key="colour:back" text="Colour of background (black)" />
             <text key="colour:text" text="Colour of text" />
             <text key="colour:arrow" text="Colour of border/arrow" />
             <roles>
