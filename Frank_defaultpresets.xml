@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
 author="Frankthetankk"
-version="1.52_2014-07-10"
+version="1.55_2014-07-10"
  
 description="My Tags Changes for Internal Presets Defaults"
 shortdescription="My Internal Preset Changes">
@@ -182,12 +182,12 @@ Note that for a match, at least one positive and no negative is required.
 	</chunk>
 	<chunk id="source_name">
 		<combo key="source" text="Source Name/Date" value="frankthetankk 2014-" default="frankthetankk 2014-" use_last_as_default="force" editable="true" />
-		<combo key="source_ref" text="Source_Reference" value="frankthetankk" default="frankthtankk" use_last_as_default="force" editable="true" />
+		<combo key="source_ref" text="Source_Reference" value="frankthetankk" default="frankthetankk" use_last_as_default="force" editable="true" />
 	</chunk>
 	<chunk id="source_base">
-		<combo key="source" text="Source Local Knowledge" values="bing;local_knowledge;survery,local knowledge,frankthetankk,local knowledge;frankthetankk" default="bing;local_knowledge;survery" use_last_as_default="force" editable="true" />
-		<combo key="source_ref" text="Source Reference" values="frankthetankk" default="frankthtankk" use_last_as_default="force" editable="true" />
-		<combo key="source_date" text="Source Date (current date YYYY-MM-DD)" editable="true" use_last_as_default="force" />
+		<key key="source" text="Source Local Knowledge" value="bing;local_knowledge;survery;frankthetankk" />
+		<key key="source_ref" text="Source Reference" value="frankthetankk" />
+		<text key="source_date" text="Source Date (current date YYYY-MM-DD)" editable="true" use_last_as_default="force" />
 	</chunk>
 	<chunk id="source_base_maxspeed">
         <reference ref="source_base" />
@@ -389,7 +389,6 @@ Note that for a match, at least one positive and no negative is required.
     </chunk>
     <chunk id="general_access">
         <combo key="access" text="General Access" values="yes,destination,delivery,permissive,private,customers,agricultural,forestry,no" values_searchable="true" />
-        <reference ref="source_base" />
     </chunk>
     <chunk id="name_wikipedia">
         <text key="name" text="Name" />
@@ -970,6 +969,7 @@ Note that for a match, at least one positive and no negative is required.
                 <reference ref="highway_yesno_incline_oneway_lit" />
                 <combo key="mtb:scale" text="MTB Scale" values="0,1,2,3,4,5" />
                 <reference ref="general_access" />
+				<reference ref="source_base" />
                 <combo key="motor_vehicle" text="Motor vehicles" values="yes,official,designated,destination,delivery,permissive,private,agricultural,forestry,no" />
                 <combo key="motorcycle" text="Motorcycle" values="yes,official,designated,destination,delivery,permissive,private,agricultural,forestry,no" />
                 <combo key="motorcar" text="Motorcar" values="yes,official,designated,destination,delivery,permissive,private,agricultural,forestry,no" />
@@ -1534,6 +1534,7 @@ Note that for a match, at least one positive and no negative is required.
             <reference ref="barrier_5" />
             <reference ref="optional_maxheight_maxwidth" />
             <reference ref="general_access" />
+			<reference ref="source_base" />
         </item> <!-- gate -->
         <item name="Lift Gate" icon="presets/lift_gate.png" type="node" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:barrier=lift_gate"
@@ -1546,6 +1547,7 @@ Note that for a match, at least one positive and no negative is required.
             <reference ref="barrier_5" />
             <reference ref="optional_maxwidth" />
             <reference ref="general_access" />
+			<reference ref="source_base" />
         </item> <!-- lift_gate -->
         <item name="Swing Gate" icon="presets/swing_gate.png" type="node" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:barrier=swing_gate" />
@@ -1554,6 +1556,7 @@ Note that for a match, at least one positive and no negative is required.
             <reference ref="barrier_5" />
             <reference ref="optional_maxwidth" />
             <reference ref="general_access" />
+			<reference ref="source_base" />
         </item> <!-- swing_gate -->
         <item name="Hampshire Gate" icon="presets/empty.png" type="node" preset_name_label="true">
             <key key="barrier" value="hampshire_gate" />
@@ -1719,7 +1722,9 @@ Note that for a match, at least one positive and no negative is required.
 			<reference ref="surface" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
-			<check key="intermittent" text="A permanent water flow or not" />
+			<check key="intermittent" text="Indicates that waterway or water body is intermittent (seasonal)" />
+			<combo key="service" text="Distinguish type of man-made waterway" values="transportation,water_power,irrigation" default="transportation" />
+			<reference ref="source_base" />
         </item>
         <item name="Ditch" icon="presets/waterway.png" type="way" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:waterway=ditch"
@@ -1734,7 +1739,9 @@ Note that for a match, at least one positive and no negative is required.
 			<reference ref="surface" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
-			<check key="intermittent" text="A permanent water flow or not" />
+			<check key="intermittent" text="Indicates that waterway or water body is intermittent (seasonal)" />
+			<combo key="service" text="Distinguish type of man-made waterway" values="transportation,water_power,irrigation" default="transportation" />
+			<reference ref="source_base" />
         </item>
         <item name="Stream" icon="presets/waterway.png" type="way" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:waterway=stream"
@@ -1753,7 +1760,9 @@ Note that for a match, at least one positive and no negative is required.
 			<reference ref="surface" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
-			<check key="intermittent" text="A permanent water flow or not" />
+			<check key="intermittent" text="Indicates that waterway or water body is intermittent (seasonal)" />
+			<combo key="service" text="Distinguish type of man-made waterway" values="transportation,water_power,irrigation" default="transportation" />
+			<reference ref="source_base" />
         </item>
         <item name="Wadi" icon="presets/waterway.png" type="way" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:waterway=wadi" />
@@ -1764,7 +1773,9 @@ Note that for a match, at least one positive and no negative is required.
 			<reference ref="surface" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
-			<check key="intermittent" text="A permanent water flow or not" />
+			<check key="intermittent" text="Indicates that waterway or water body is intermittent (seasonal)" />
+			<combo key="service" text="Distinguish type of man-made waterway" values="transportation,water_power,irrigation" default="transportation" />
+			<reference ref="source_base" />
         </item>
         <item name="Canal" icon="presets/waterway.png" type="way" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:waterway=canal"
@@ -1781,7 +1792,9 @@ Note that for a match, at least one positive and no negative is required.
 			<reference ref="surface" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
-			<check key="intermittent" text="A permanent water flow or not" />
+			<check key="intermittent" text="Indicates that waterway or water body is intermittent (seasonal)" />
+			<combo key="service" text="Distinguish type of man-made waterway" values="transportation,water_power,irrigation" default="transportation" />
+			<reference ref="source_base" />
         </item>
         <item name="River" icon="presets/river.png" type="way" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:waterway=river"
@@ -1798,7 +1811,9 @@ Note that for a match, at least one positive and no negative is required.
 			<reference ref="surface" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <combo key="layer" text="Layer" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" length="3" />
-			<check key="intermittent" text="A permanent water flow or not" />
+			<check key="intermittent" text="Indicates that waterway or water body is intermittent (seasonal)" />
+			<combo key="service" text="Distinguish type of man-made waterway" values="transportation,water_power,irrigation" default="transportation" />
+			<reference ref="source_base" />
         </item>
         <separator/>
         <item name="Spring" icon="presets/spring.png" type="node,closedway" preset_name_label="true">
@@ -1812,13 +1827,16 @@ Note that for a match, at least one positive and no negative is required.
             <key key="natural" value="spring" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <text key="name" text="Name" />
-			<check key="intermittent" text="A permanent water flow or not" />
+			<check key="intermittent" text="Indicates that waterway or water body is intermittent (seasonal)" />
+			<combo key="service" text="Distinguish type of man-made waterway" values="transportation,water_power,irrigation" default="transportation" />
+			<reference ref="source_base" />
         </item>
         <item name="Waterfall" icon="presets/waterfall.png" type="node,way" preset_name_label="true">
             <space />
             <key key="waterway" value="waterfall" />
             <reference ref="name_wikipedia" />
-			<check key="intermittent" text="A permanent water flow or not" />
+			<check key="intermittent" text="Indicates that waterway or water body is intermittent (seasonal)" />
+			<reference ref="source_base" />
         </item>
         <item name="Weir" icon="presets/weir.png" type="node,way" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:waterway=weir"
@@ -1831,6 +1849,8 @@ Note that for a match, at least one positive and no negative is required.
             <space />
             <key key="waterway" value="weir" />
             <text key="name" text="Name" />
+			<combo key="service" text="Distinguish type of man-made waterway" values="transportation,water_power,irrigation" default="transportation" />
+			<reference ref="source_base" />
         </item>
         <item name="Dam" icon="presets/dam.png" type="node,way,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:waterway=dam"
@@ -1845,6 +1865,8 @@ Note that for a match, at least one positive and no negative is required.
 			<reference ref="surface" />
 			<combo key="level" text="Level" values="5,4,3,2,1,0,-1,-2,-3,-4,-5" default="-1" length="3" />
             <reference ref="name_wikipedia" />
+			<combo key="service" text="Distinguish type of man-made waterway" values="transportation,water_power,irrigation" default="transportation" />
+			<reference ref="source_base" />
         </item>
         <item name="Groyne" icon="presets/groyne.png" type="node,way,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:man_made=groyne"
@@ -1852,6 +1874,8 @@ Note that for a match, at least one positive and no negative is required.
                   ja.href="http://wiki.openstreetmap.org/wiki/JA:Tag:man_made=groyne"
                   pt_BR.href="http://wiki.openstreetmap.org/wiki/Pt-br:Tag:man_made=groyne" />
             <key key="man_made" value="groyne" />
+			<combo key="service" text="Distinguish type of man-made waterway" values="transportation,water_power,irrigation" default="transportation" />
+			<reference ref="source_base" />
         </item>
         <item name="Breakwater" icon="presets/groyne.png" type="way,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:man_made=breakwater"
@@ -1862,6 +1886,8 @@ Note that for a match, at least one positive and no negative is required.
             <key key="man_made" value="breakwater" />
             <text key="ref" text="Reference" />
             <text key="name" text="Name" />
+			<combo key="service" text="Distinguish type of man-made waterway" values="transportation,water_power,irrigation" default="transportation" />
+			<reference ref="source_base" />
         </item>
         <separator/>
         <item name="Culvert" icon="presets/tunnel.png" type="way" preset_name_label="true">
@@ -1880,12 +1906,15 @@ Note that for a match, at least one positive and no negative is required.
                 <text key="width" text="Width (meters)" />
 		        <combo key="incline" text="Incline" values="up,down,10%,-10%,10°,-10°" default="up" use_last_as_default="force" />
             </optional>
+			<combo key="service" text="Distinguish type of man-made waterway" values="transportation,water_power,irrigation" default="transportation" />
+			<reference ref="source_base" />
         </item>
         <separator/>
         <item name="Basin" icon="presets/landuse_water.png" type="node,closedway,relation" preset_name_label="true">
             <space />
             <key key="landuse" value="basin" />
             <text key="name" text="Name" />
+			<reference ref="source_base" />
         </item>
         <item name="Reservoir" icon="presets/landuse_water.png" type="node,closedway,relation" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:landuse=reservoir"
@@ -1896,11 +1925,13 @@ Note that for a match, at least one positive and no negative is required.
             <space />
             <key key="landuse" value="reservoir" />
             <text key="name" text="Name" />
+			<reference ref="source_base" />
         </item>
         <item name="Covered Reservoir" icon="presets/reservoir_covered.png" type="node,closedway,relation" preset_name_label="true">
             <space />
             <key key="man_made" value="reservoir_covered" />
             <text key="name" text="Name" />
+			<reference ref="source_base" />
         </item>
         <separator/>
         <item name="Water" icon="presets/water.png" type="node,closedway,relation" preset_name_label="true">
@@ -1915,11 +1946,13 @@ Note that for a match, at least one positive and no negative is required.
             <key key="natural" value="water" />
             <text key="name" text="Name" />
             <combo key="water" text="Water Body" values="lake,lagoon,pond,reservoir" match="key" values_searchable="true" />
+			<reference ref="source_base" />
         </item>
         <item name="Land" icon="presets/landuse.png" type="node,closedway,relation" preset_name_label="true">
             <space />
             <key key="natural" value="land" />
             <text key="name" text="Name" />
+			<reference ref="source_base" />
         </item>
         <item name="Coastline" icon="presets/coastline.png" type="node,way,closedway,relation" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:natural=coastline"
@@ -1930,6 +1963,7 @@ Note that for a match, at least one positive and no negative is required.
             <space />
             <key key="natural" value="coastline" />
             <text key="name" text="Name" />
+			<reference ref="source_base" />
         </item>
         <item name="Riverbank" icon="presets/waterway.png" type="closedway,relation" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:waterway=riverbank"
@@ -1944,6 +1978,7 @@ Note that for a match, at least one positive and no negative is required.
             <space />
             <key key="waterway" value="riverbank" />
             <text key="name" text="Name" />
+			<reference ref="source_base" />
         </item>
         <separator/>
         <item name="Wetland" icon="presets/empty.png" type="node,closedway,relation" preset_name_label="true">
@@ -1961,11 +1996,13 @@ Note that for a match, at least one positive and no negative is required.
             <key key="natural" value="wetland" />
             <text key="name" text="Name" />
             <combo key="wetland" text="Type" values="swamp,bog,marsh,reedbed,saltmarsh,tidalflat,mangrove" values_searchable="true" />
+			<reference ref="source_base" />
         </item>
         <item name="Mud" icon="presets/mud.png" type="node,closedway,relation" preset_name_label="true">
             <key key="natural" value="mud" />
             <space />
             <text key="name" text="Name" />
+			<reference ref="source_base" />
         </item>
         <item name="Beach" icon="presets/beach.png" type="node,closedway,relation" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:natural=beach"
@@ -1977,11 +2014,13 @@ Note that for a match, at least one positive and no negative is required.
             <space />
             <key key="natural" value="beach" />
             <text key="name" text="Name" />
+			<reference ref="source_base" />
         </item>
         <item name="Bay" icon="presets/bay.png" type="node,closedway,relation" preset_name_label="true">
             <space />
             <key key="natural" value="bay" />
             <text key="name" text="Name" />
+			<reference ref="source_base" />
         </item>
         <item name="Cliff" icon="presets/cliff.png" type="node,way,closedway,relation" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:natural=cliff"
@@ -1993,6 +2032,7 @@ Note that for a match, at least one positive and no negative is required.
             <space />
             <key key="natural" value="cliff" />
             <text key="name" text="Name" />
+			<reference ref="source_base" />
         </item>
       </group> <!-- Water -->
     <group name="Shipping" icon="presets/ferry.png">
@@ -2540,6 +2580,7 @@ Note that for a match, at least one positive and no negative is required.
             <reference ref="link_contact" />
             <reference ref="link_addresses" />
 			<reference ref="link_payment_base" />
+			<reference ref="source_base" />
         </item>
         <item name="Parts" icon="presets/car_repair.png" type="node,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:shop=car_parts"
@@ -2551,6 +2592,7 @@ Note that for a match, at least one positive and no negative is required.
             <reference ref="link_contact" />
             <reference ref="link_addresses" />
 			<reference ref="link_payment_base" />
+			<reference ref="source_base" />
         </item>
         <item name="Tyres (Tires)" icon="presets/tyres.png" type="node,closedway" preset_name_label="true">
             <space />
@@ -2560,6 +2602,7 @@ Note that for a match, at least one positive and no negative is required.
             <reference ref="link_contact" />
             <reference ref="link_addresses" />
 			<reference ref="link_payment_base" />
+			<reference ref="source_base" />
         </item>
         <separator/>
         <item name="Rental" icon="presets/car_rental.png" type="node,closedway" preset_name_label="true">
@@ -2577,6 +2620,7 @@ Note that for a match, at least one positive and no negative is required.
             <reference ref="link_contact" />
             <reference ref="link_addresses" />
 			<reference ref="link_payment_base" />
+			<reference ref="source_base" />
         </item>
         <item name="Sharing" icon="presets/car_sharing.png" type="node,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:amenity=car_sharing"
@@ -2592,6 +2636,7 @@ Note that for a match, at least one positive and no negative is required.
             <text key="capacity" text="Capacity" />
             <reference ref="name_oh" />
             <text key="website" text="Website" />
+			<reference ref="source_base" />
         </item>
     </group> <!-- Car -->
     <group name="Motorcycle" icon="presets/motorbike.png">
@@ -2602,6 +2647,7 @@ Note that for a match, at least one positive and no negative is required.
             <text key="capacity" text="Capacity" />
             <combo key="parking" text="Type" values="multi-storey,surface,underground,rooftop" />
             <combo key="fee" text="Fee" values="yes,no" />
+			<reference ref="source_base" />
         </item>
         <item name="Motorcycle Dealer" icon="presets/motorbike.png" type="node,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:shop=motorcycle"
@@ -2627,6 +2673,7 @@ Note that for a match, at least one positive and no negative is required.
             <reference ref="link_contact" />
             <reference ref="link_addresses" />
 			<reference ref="link_payment_base" />
+			<reference ref="source_base" />
         </item>
     </group> <!-- Motorcycle -->
     <group name="Bicycle" icon="presets/bike.png">
@@ -2647,6 +2694,7 @@ Note that for a match, at least one positive and no negative is required.
             <combo key="bicycle_parking" text="Type" values="anchors,building,ground_slots,informal,lockers,rack,shed,stands,wall_loops" />
             <check key="covered" text="Covered" />
             <check key="supervised" text="Supervised" />
+			<reference ref="source_base" />
         </item>
         <item name="Bike Dealer" icon="presets/bike.png" type="node,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:shop=bicycle"
@@ -2671,6 +2719,7 @@ Note that for a match, at least one positive and no negative is required.
             <reference ref="link_contact" />
             <reference ref="link_addresses" />
 			<reference ref="link_payment_base" />
+			<reference ref="source_base" />
         </item>
         <item name="Rental" icon="presets/bicycle_rental.png" type="node,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:amenity=bicycle_rental"
@@ -2690,6 +2739,7 @@ Note that for a match, at least one positive and no negative is required.
             <reference ref="link_contact" />
             <reference ref="link_addresses" />
 			<reference ref="link_payment_base" />
+			<reference ref="source_base" />
         </item>
     </group> <!-- Bicycle -->
     <group name="Public Transport" icon="presets/bus.png">
@@ -4370,6 +4420,7 @@ Note that for a match, at least one positive and no negative is required.
             <reference ref="name_oh" />
             <reference ref="link_contact" />
             <reference ref="link_addresses" />
+			<reference ref="source_base" />
 			<optional>
 				<checkgroup columns="2">
 					<check key="recycling:cans" text="Cans" />
@@ -4394,7 +4445,7 @@ Note that for a match, at least one positive and no negative is required.
 				</checkgroup>
 			</optional>
         </item>
-        <item name="Waste Basket" icon="styles/standard/service/recycling/trash-bin.png" type="node" preset_name_label="true">
+        <item name="Waste Basket (Trash Can)" icon="styles/standard/service/recycling/trash-bin.png" type="node" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:amenity=waste_basket"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:amenity=waste_basket"
                   fr.href="http://wiki.openstreetmap.org/wiki/FR:Tag:amenity=waste_basket"
@@ -4403,7 +4454,14 @@ Note that for a match, at least one positive and no negative is required.
                   nl.href="http://wiki.openstreetmap.org/wiki/NL:Tag:amenity=waste_basket"
                   pt_BR.href="http://wiki.openstreetmap.org/wiki/Pt-br:Tag:amenity=waste_basket"
                   ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:amenity=waste_basket" />
+			<label text="A single small container for depositing garbage that is easily accesible for pedestrians. Trash Can, Garbage Can, Litter Bin, Rubbish Bin." />
             <key key="amenity" value="waste_basket" />
+			<combo key="waste" test="Type of Waste" values="trash,excrement,oil,chemical_toilet,grey_water,drugs,organic,plastic,rubble,scrap_metal" />
+            <reference ref="name_oh" />
+			<reference ref="general_access" />
+            <reference ref="link_contact" />
+            <reference ref="link_addresses" />
+			<reference ref="source_base" />
         </item>
         <item name="Waste Disposal" icon="styles/standard/service/recycling/waste_disposal.png" type="node" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:amenity=waste_disposal"
@@ -4412,7 +4470,14 @@ Note that for a match, at least one positive and no negative is required.
                   pl.href="http://wiki.openstreetmap.org/wiki/Pl:Tag:amenity=waste_disposal"
                   pt_BR.href="http://wiki.openstreetmap.org/wiki/Pt-br:Tag:amenity=waste_disposal"
                   ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:amenity=waste_disposal" />
+			<label text="Dumpster etc" />
             <key key="amenity" value="waste_disposal" />
+			<combo key="waste" test="Type of Waste" values="trash,excrement,oil,chemical_toilet,grey_water,drugs,organic,plastic,rubble,scrap_metal" />
+            <reference ref="name_oh" />
+			<reference ref="general_access" />
+            <reference ref="link_contact" />
+            <reference ref="link_addresses" />
+			<reference ref="source_base" />
         </item>
         <separator/>
         <item name="Bench" icon="presets/bench.png" type="node" preset_name_label="true">
@@ -4434,6 +4499,11 @@ Note that for a match, at least one positive and no negative is required.
             <combo key="material" text="Material" values="stone,metal,wood,plastic" />
             <combo key="colour" text="Color (HTML name or hexadecimal code)" values_context="color" values="black,brown,green,red,blue,gray,white,#CD853F" />
             <combo key="seats" text="Amount of Seats" values="2,3,4,5,6,7,8,9,10" />
+            <reference ref="name_oh" />
+			<reference ref="general_access" />
+            <reference ref="link_contact" />
+            <reference ref="link_addresses" />
+			<reference ref="source_base" />
         </item>
         <item name="Shelter" icon="presets/shelter.png" type="node,closedway" preset_name_label="true">
             <space />
@@ -4441,6 +4511,11 @@ Note that for a match, at least one positive and no negative is required.
             <text key="name" text="Name" />
             <check key="fireplace" text="Fireplace" />
             <combo key="shelter_type" text="Type of shelter" values="weather_shelter,public_transport,picnic_shelter,wildlife_hide" values_context="shelter" values_searchable="true" />
+            <reference ref="name_oh" />
+			<reference ref="general_access" />
+            <reference ref="link_contact" />
+            <reference ref="link_addresses" />
+			<reference ref="source_base" />
         </item>
         <item name="Hunting Stand" icon="presets/hunting_stand.png" type="node" preset_name_label="true">
             <space />
@@ -4449,6 +4524,11 @@ Note that for a match, at least one positive and no negative is required.
             <combo key="shelter" text="Shelter" values="yes,no,unknown" />
             <combo key="hide" text="Hide" values="yes,no,unknown" />
             <combo key="lock" text="Lock" values="yes,no,unknown" />
+            <reference ref="name_oh" />
+			<reference ref="general_access" />
+            <reference ref="link_contact" />
+            <reference ref="link_addresses" />
+			<reference ref="source_base" />
         </item>
         <separator/>
         <item name="Drinking Water" icon="presets/drinking_water.png" type="node" preset_name_label="true">
@@ -4466,7 +4546,12 @@ Note that for a match, at least one positive and no negative is required.
             <optional>
                 <text key="name" text="Name" />
                 <text key="description" text="Description" />
-            </optional>
+            </optional>            
+			<reference ref="name_oh" />
+			<reference ref="general_access" />
+            <reference ref="link_contact" />
+            <reference ref="link_addresses" />
+			<reference ref="source_base" />
         </item>
         <item name="Fire Hydrant" icon="presets/fire_hydrant.png" type="node" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:emergency=fire_hydrant"
@@ -4490,6 +4575,11 @@ Note that for a match, at least one positive and no negative is required.
             <combo key="fire_hydrant:pressure" text="Pressure (in bar)" values="5,6,8,suction" />
             <text key="fire_hydrant:count" text="Count" />
 			<check key="in_service" text="In Service" />
+			<reference ref="name_oh" />
+			<reference ref="general_access" />
+            <reference ref="link_contact" />
+            <reference ref="link_addresses" />
+			<reference ref="source_base" />
         </item>
     </group> <!-- Facilities -->
   </group>  <!-- Facilities -->
@@ -4524,6 +4614,7 @@ Note that for a match, at least one positive and no negative is required.
                 <combo key="sport" text="Sport" values="multi,archery,athletics,american_football,australian_football,baseball,basketball,boules,bowls,canadian_football,canoe,climbing,cricket,cricket_nets,croquet,cycling,dog_racing,equestrian,gaelic_games,golf,gymnastics,hockey,horse_racing,motor,pelota,racquet,rugby_league,rugby_union,shooting,skateboard,skating,skiing,soccer,swimming,table_tennis,tennis" values_context="sport" />
             </optional>
 			<reference ref="name_operator_oh" />
+			<reference ref="source_base" />
 			<reference ref="general_access" />
 			<reference ref="supervised_lit_oh" />
         </item>
@@ -4706,7 +4797,7 @@ Note that for a match, at least one positive and no negative is required.
         <item name="Swimming" icon="presets/swimming.png" type="node,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:sport=swimming"
                   uk.href="http://wiki.openstreetmap.org/wiki/Uk:Tag:sport=swimming" />
-			<label text="Swimming Pool" />
+			<label text="Sport - Swimming" />
             <space />
             <key key="sport" value="swimming" />
             <combo key="leisure" text="Type" values="sports_centre,stadium,swimming_pool,water_park" default="swimming_pool" values_searchable="true" />
@@ -5121,6 +5212,10 @@ Note that for a match, at least one positive and no negative is required.
             <space />
             <key key="man_made" value="wastewater_plant" />
             <text key="name" text="Name" />
+            <reference ref="name_oh" />
+            <reference ref="link_contact" />
+            <reference ref="link_addresses" />
+			<reference ref="source_base" />
         </item>
         <item name="Watermill" icon="styles/standard/misc/landmark/watermill.png" type="node,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:man_made=watermill"
@@ -7466,7 +7561,6 @@ Note that for a match, at least one positive and no negative is required.
                     <role key="" text="route segment" requisite="required" type="way"/>
                 </roles>
             </item>
-
             <item name="MTB route" icon="presets/path.png" type="relation" preset_name_label="true">
                 <link href="http://wiki.openstreetmap.org/wiki/Mountain_biking"
                   cs.href="http://wiki.openstreetmap.org/wiki/Cs:Mountain_biking"
@@ -7486,7 +7580,6 @@ Note that for a match, at least one positive and no negative is required.
                     <role key="" text="route segment" requisite="required" type="way" member_expression="highway=path OR highway=track"/>
                 </roles>
             </item>
-
             <item name="Hiking route" icon="presets/path.png" type="relation" preset_name_label="true">
                 <link href="http://wiki.openstreetmap.org/wiki/Tag:route=hiking#Tagging_walking_and_hiking_Route_Networks"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Hiking"
@@ -7509,7 +7602,6 @@ Note that for a match, at least one positive and no negative is required.
                     <role key="" text="natural" requisite="optional" type="node,closedway" member_expression="natural=peak OR natural=volcano OR mountain_pass=yes OR natural=water OR tourism=viewpoint OR amenity=drinking_water OR natural=spring OR place=locality"/>
                 </roles>
             </item>
-
             <item name="Piste route" icon="presets/path.png" type="relation" preset_name_label="true">
                 <link href="http://wiki.openstreetmap.org/wiki/Tag:route=piste"
                   fr.href="http://wiki.openstreetmap.org/wiki/FR:Tag:route=piste"/>
@@ -7531,7 +7623,6 @@ Note that for a match, at least one positive and no negative is required.
                     <role key="start" text="entry points" requisite="optional" type="node" />
                 </roles>
             </item>
-
             <item name="Ski route" icon="presets/path.png" type="relation" preset_name_label="true">
                 <link href="http://wiki.openstreetmap.org/wiki/Tag:route=ski"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:route=ski"/>
@@ -7553,7 +7644,6 @@ Note that for a match, at least one positive and no negative is required.
                     <role key="start" text="entry points" requisite="optional" type="node" />
                 </roles>
             </item>
-
             <separator/>
             <item name="Detour route" icon="presets/path.png" type="relation" preset_name_label="true">
                 <link href="http://wiki.openstreetmap.org/wiki/Tag:route=detour"
