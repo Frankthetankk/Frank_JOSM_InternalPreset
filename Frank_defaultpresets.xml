@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
 author="Frankthetankk"
-version="1.51_2014-06-24"
+version="1.52_2014-07-10"
  
 description="My Tags Changes for Internal Presets Defaults"
 shortdescription="My Internal Preset Changes">
@@ -2501,7 +2501,7 @@ Note that for a match, at least one positive and no negative is required.
             <reference ref="link_contact" />
             <reference ref="link_addresses" />
         </item>
-        <item name="Charging Station" icon="styles/standard/accommodation/camping/hookup.png" type="node" preset_name_label="true">
+        <item name="Charging Station" icon="styles/standard/vehicle/fuel/charging_station.png" type="node" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:amenity=charging_station"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:amenity=charging_station"
                   ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:amenity=charging_station" />
@@ -2532,7 +2532,7 @@ Note that for a match, at least one positive and no negative is required.
             <reference ref="link_contact" />
             <reference ref="link_addresses" />
         </item>
-        <item name="Repair" icon="presets/car_repair.png" type="node,closedway" preset_name_label="true">
+        <item name="Repair" icon="styles/standard/vehicle/car_parts.svg" type="node,closedway" preset_name_label="true">
             <space />
             <key key="shop" value="car_repair" />
 			<combo key="service" text="Type of Service Available" values="oil,tyre,parts,electrical,dealer,repair" match="key" editable="true" />
@@ -5797,6 +5797,20 @@ Note that for a match, at least one positive and no negative is required.
             <reference ref="link_addresses" />
 			<reference ref="link_payment_base" />
         </item>
+		<item name="Tea" icon="styles/standard/shop/groceries/tea.svg" type="node,closedway" preset_name_label="true">
+			<link href="http://wiki.openstreetmap.org/wiki/Tag:shop=tea" />
+			<space />
+			<key key="shop" value="tea" />
+			<reference ref="name_oh" />
+			<reference ref="link_contact" />
+		</item>
+		<item name="Coffee" icon="styles/standard/shop/groceries/coffee.svg" type="node,closedway" preset_name_label="true">
+			<link href="http://wiki.openstreetmap.org/wiki/Tag:shop=coffee" />
+			<space />
+			<key key="shop" value="coffee" />
+			<reference ref="name_oh" />
+			<reference ref="link_contact" />
+		</item>
         <separator/>
         <item name="Marketplace" icon="styles/standard/place/marketplace.png" type="node,way,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:amenity=marketplace"
@@ -6071,6 +6085,15 @@ Note that for a match, at least one positive and no negative is required.
             <reference ref="link_addresses" />
 			<reference ref="link_payment_base" />
         </item>
+		<item name="Video games" icon="styles/standard/shop/video_games.png" type="node,closedway" preset_name_label="true">
+			<link href="http://wiki.openstreetmap.org/wiki/Tag:shop=video_games" />
+			<space />
+			<key key="shop" value="video_games" />
+			<reference ref="name_oh" />
+            <reference ref="link_contact" />
+            <reference ref="link_addresses" />
+			<reference ref="link_payment_base" />
+        </item>
     </group> <!-- Electronic -->
     <group name="Cash" icon="presets/dollar.png">
         <item name="Bank" icon="styles/standard/money/bank.png" type="node,closedway" preset_name_label="true">
@@ -6195,6 +6218,19 @@ Note that for a match, at least one positive and no negative is required.
             <reference ref="link_addresses" />
 			<reference ref="link_payment_base" />
         </item>
+		<item name="Beauty" icon="styles/standard/shop/beauty.svg" type="node,closedway" preset_name_label="true">
+			<link href="http://wiki.openstreetmap.org/wiki/Tag:shop=beauty"
+			      fr.href="http://wiki.openstreetmap.org/wiki/FR:Tag:shop=beauty"
+				  ja.href="http://wiki.openstreetmap.org/wiki/JA:Tag:shop=beauty"
+				  pt_BR.href="http://wiki.openstreetmap.org/wiki/Pt-br:Tag:shop=beauty"
+				  ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:shop=beauty" />
+			<space />
+			<key key="shop" value="beauty" />
+			<reference ref="name_oh" />
+			<reference ref="link_contact" />
+			<reference ref="link_addresses" />
+			<reference ref="link_payment_base" />
+		</item>
         <item name="Optician" icon="styles/standard/shop/optician.png" type="node,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:shop=optician"
                   pt_BR.href="http://wiki.openstreetmap.org/wiki/Pt-br:Tag:shop=optician"
@@ -6362,7 +6398,31 @@ Note that for a match, at least one positive and no negative is required.
             <reference ref="link_addresses" />
 			<reference ref="link_payment_base" />
         </item>
-        <separator/>
+		<item name="Bed" icon="styles/standard/shop/bed.svg" type="node,closedway" preset_name_label="true">
+			<link href="http://wiki.openstreetmap.org/wiki/Tag:shop=bed"
+			      es.href="http://wiki.openstreetmap.org/wiki/ES:Tag:shop=bed"
+				  fr.href="http://wiki.openstreetmap.org/wiki/FR:Tag:shop=bed"
+				  pt_BR.href="http://wiki.openstreetmap.org/wiki/Pt-br:Tag:shop=bed"
+				  ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:shop=bed" />
+			<space />
+			<key key="shop" value="bed" />
+			<reference ref="name_oh" />
+			<reference ref="link_contact" />
+            <reference ref="link_addresses" />
+			<reference ref="link_payment_base" />
+		</item>
+		<item name="Interior decoration" icon="styles/standard/shop/interior_decoration.svg" type="node,closedway" preset_name_label="true">
+			<link href="http://wiki.openstreetmap.org/wiki/Tag:shop=interior_decoration"
+			      pt_BR.href="http://wiki.openstreetmap.org/wiki/Pt-br:Tag:shop=interior_decoration"
+				  ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:shop=interior_decoration" />
+			<space />
+			<key key="shop" value="interior_decoration" />
+			<reference ref="name_oh" />
+			<reference ref="link_contact" />
+            <reference ref="link_addresses" />
+			<reference ref="link_payment_base" />
+		</item>
+		<separator/>
         <item name="Stationery" icon="presets/stationery.png" type="node,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:shop=stationery"
                   de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:shop=stationery"
@@ -6418,6 +6478,16 @@ Note that for a match, at least one positive and no negative is required.
             <reference ref="link_addresses" />
 			<reference ref="link_payment_base" />
         </item>
+		<item name="Ticket" icon="styles/standard/shop/ticket.svg" type="node,closedway" preset_name_label="true">
+			<link href="http://wiki.openstreetmap.org/wiki/Tag:shop=ticket"
+			      ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:shop=ticket" />
+			<space />
+			<key key="shop" value="ticket" />
+			<reference ref="name_oh" />
+			<reference ref="link_contact" />
+            <reference ref="link_addresses" />
+			<reference ref="link_payment_base" />
+		</item>
         <separator/>
         <item name="Travel Agency" icon="presets/travel.png" type="node,closedway" preset_name_label="true">
             <link href="http://wiki.openstreetmap.org/wiki/Tag:shop=travel_agency"
@@ -6485,6 +6555,30 @@ Note that for a match, at least one positive and no negative is required.
             <reference ref="link_addresses" />
 			<reference ref="link_payment_base" />
         </item>
+		<item name="Bag" icon="styles/standard/shop/bag.svg" type="node,closedway" preset_name_label="true">
+			<link href="http://wiki.openstreetmap.org/wiki/Tag:shop=bag"
+			      de.href="http://wiki.openstreetmap.org/wiki/DE:Tag:shop=bag"
+				  ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:shop=bag" />
+			<space />
+			<key key="shop" value="bag" />
+			<reference ref="name_oh" />
+			<reference ref="link_contact" />
+            <reference ref="link_addresses" />
+			<reference ref="link_payment_base" />
+		</item>
+		<item name="Pet" icon="styles/standard/shop/pet.svg" type="node,closedway" preset_name_label="true">
+			<link href="http://wiki.openstreetmap.org/wiki/Tag:shop=pet"
+			      es.href="http://wiki.openstreetmap.org/wiki/ES:Tag:shop=pet"
+				  ja.href="http://wiki.openstreetmap.org/wiki/JA:Tag:shop=pet"
+				  pt_BR.href="http://wiki.openstreetmap.org/wiki/Pt-br:Tag:shop=pet"
+				  ru.href="http://wiki.openstreetmap.org/wiki/RU:Tag:shop=pet" />
+			<space />
+			<key key="shop" value="pet" />
+			<reference ref="name_oh" />
+			<reference ref="link_contact" />
+            <reference ref="link_addresses" />
+			<reference ref="link_payment_base" />
+		</item>
     </group> <!-- Other -->
     <item name="Vending machine" icon="presets/vending_machine.png" type="node" preset_name_label="true">
         <link href="http://wiki.openstreetmap.org/wiki/Tag:amenity=vending_machine"
@@ -6734,7 +6828,6 @@ Note that for a match, at least one positive and no negative is required.
             <space />
             <key key="natural" value="tree" />
             <text key="name" text="Name" />
-            <combo key="type" text="Type" values="broad_leaved,conifer,palm" />
             <text key="height" text="Height in meter (m)" />
             <text key="name:botanical" text="Botanical Name" />
             <optional>
@@ -7471,7 +7564,7 @@ Note that for a match, at least one positive and no negative is required.
                 <reference ref="name_ref_operator"/>
                 <optional>
                     <text key="destination" text="Destination"/>
-                    <text key="deour" text="Ref of the way this is a detour to"/>
+                    <text key="detour" text="Ref of the way this is a detour to"/>
                 </optional>
                 <roles>
                     <role key="" text="route segment" requisite="required" type="way"/>
